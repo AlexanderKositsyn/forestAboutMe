@@ -1,0 +1,24 @@
+extends ../layout.pug
+
+block title
+    title works
+
+block main 
+    main(class='main main--works')
+        .container.main__container.main__container--about
+            svg(class="main__bg-left"  width="100%" height='100%')
+                use(xlink:href="icons/sprite/sprite.svg#about_bg_left")
+            svg(class="main__bg-right" width="100%" height='100%')
+                use(xlink:href="icons/sprite/sprite.svg#about_bg_right" )
+
+//- это из блока header
+block person-card
+    div(class="header__avatar person-card") 
+        .person-card__top
+            .person-card__pic
+                img(class='person-card__img' src="../img/avatar_my.jpg")
+        .person-card__bottom
+            .person-card__fio.
+                Александр Косицын
+            .person-card__whoIsSite.
+                Личный сайт веб разрабочика

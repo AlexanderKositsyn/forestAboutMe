@@ -1,6 +1,23 @@
 .main {
+  position: relative;
+  flex: 1 1 auto;
   &__container {
     display: flex;
+  }
+  &__bg-right {
+    position: absolute;
+    top: -15.3%;
+    right: 0;
+    fill: $white;
+    width: 50%;
+  }
+  &__bg-left {
+    position: absolute;
+    fill: $white;
+    top: -15.6%;
+    left: 0;
+    width: 50%;
+    height: 100%;
   }
   &--about {
     padding-top: 68px;

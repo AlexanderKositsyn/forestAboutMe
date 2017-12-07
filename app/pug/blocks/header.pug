@@ -1,0 +1,24 @@
+header(class="header")
+                .container.haeder__container
+                    - var values = ['vk','github','in'];
+                    ul(class="header__socials social-list") 
+                        //цикл для генерирования социалок в хедере
+                        each val in values
+                            li(class="social-list__item")
+                                a(class="social-list__link" href='#')
+                                    svg(class="social-list__icon")
+                                        use(xlink:href="icons/sprite/sprite.svg#" + val)
+                    block person-card
+                        div(class="header__avatar person-card") 
+                            .person-card__top
+                                .person-card__pic
+                                    img(class='person-card__img' src="../img/avatar_my.jpg")
+                            .person-card__bottom
+                                .person-card__name-text.
+                                    Блог
+                                .person-card__text-amplua.
+                                    Статьи, которые я написал
+                    div(class="header__hamburger-menu")
+                        a(href="#" class="hamburger")
+                            span
+                    a(href='#' class="bottom-arrow" data-scroll-to="1")

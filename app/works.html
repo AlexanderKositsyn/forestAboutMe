@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8"/>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+		<meta http-equiv="X-UA-Compatible" content="ie=edge"/>
+		<title>works</title>
+		<!-- build:css css/vendor.min.css -->
+		<link rel="stylesheet" href="./lib/normalize.css"/>
+		<!-- endbuild -->
+		<!-- build:css css/main.min.css -->
+		<link rel="stylesheet" href="css/base.css"/>
+		<!-- endbuild -->
+		<!-- build:js js/vendor.min.js \-->
+		<script src="./lib/svg4everybody.min.js"></script>
+		<!-- endbuild  -->
+	</head>
+	<body>
+		<script>svg4everybody(); // run it now or whenever you are ready</script>
+		<div class="wrapper">
+			<header class="header">
+				<div class="container haeder__container">
+					<ul class="header__socials social-list"> 
+						<!--цикл для генерирования социалок в хедере-->
+						<li class="social-list__item"><a class="social-list__link" href="#">
+								<svg class="social-list__icon">
+									<use xlink:href="icons/sprite/sprite.svg#vk"></use>
+								</svg></a></li>
+						<li class="social-list__item"><a class="social-list__link" href="#">
+								<svg class="social-list__icon">
+									<use xlink:href="icons/sprite/sprite.svg#github"></use>
+								</svg></a></li>
+						<li class="social-list__item"><a class="social-list__link" href="#">
+								<svg class="social-list__icon">
+									<use xlink:href="icons/sprite/sprite.svg#in"></use>
+								</svg></a></li>
+					</ul>
+					<div class="header__avatar person-card"> 
+						<div class="person-card__top">
+							<div class="person-card__pic"><img class="person-card__img" src="../img/avatar_my.jpg"/></div>
+						</div>
+						<div class="person-card__bottom">
+							<div class="person-card__fio">Александр Косицын</div>
+							<div class="person-card__whoIsSite">Личный сайт веб разрабочика</div>
+						</div>
+					</div>
+					<div class="header__hamburger-menu"><a class="hamburger" href="#"><span></span></a></div><a class="bottom-arrow" href="#" data-scroll-to="1"></a>
+				</div>
+			</header>
+			<main class="main main--works">
+				<div class="container main__container main__container--about">
+					<svg class="main__bg-left" width="100%" height="100%">
+						<use xlink:href="icons/sprite/sprite.svg#about_bg_left"></use>
+					</svg>
+					<svg class="main__bg-right" width="100%" height="100%">
+						<use xlink:href="icons/sprite/sprite.svg#about_bg_right"></use>
+					</svg>
+				</div>
+			</main>
+			<footer class="footer"> 
+				<div class="container footer__container footer__container--top">
+					<div class="footer__column footer__column--left">
+						<div class="footer__about">Этот сайт я сделал в рамках обучения в Школе онлайн образования LoftSchool. </div>
+					</div>
+					<div class="footer__column footer__column--center">
+						<ul class=" footer__pages-list pages-list"> 
+							<!--цикл для генерирования социалок в хедере-->
+							<li class="pages-list__item"><a class="pages-list__link" href="#">Мои работы</a></li>
+							<li class="pages-list__item"><a class="pages-list__link" href="#">Обо мне</a></li>
+							<li class="pages-list__item"><a class="pages-list__link" href="#">Блог</a></li>
+							<li class="pages-list__item"><a class="pages-list__link" href="#">Авторизация</a></li>
+						</ul>
+						<ul class="footer__socials social-list"> 
+							<!--цикл для генерирования социалок в футере-->
+							<li class="social-list__item"><a class="social-list__link" href="#">
+									<svg class="social-list__icon">
+										<use xlink:href="icons/sprite/sprite.svg#vk"></use>
+									</svg></a></li>
+							<li class="social-list__item"><a class="social-list__link" href="#">
+									<svg class="social-list__icon">
+										<use xlink:href="icons/sprite/sprite.svg#github"></use>
+									</svg></a></li>
+							<li class="social-list__item"><a class="social-list__link" href="#">
+									<svg class="social-list__icon">
+										<use xlink:href="icons/sprite/sprite.svg#in"></use>
+									</svg></a></li>
+						</ul>
+					</div>
+					<div class="footer__column footer__column--right">
+						<div class="footer__quote">
+							Всегда пишите код так, будто сопровождать его будет склонный к насилию психопат, который знает, где вы живете.<br>
+							<span class='footer__quote-author'> — Martin Golding</span>
+							 
+						</div>
+					</div>
+				</div>
+				<div class="container footer__container footer__container--bottom">
+					<div class="footer__copyright">© Александр Косицын | Создано с любовью в LoftSchool | 2017</div>
+				</div>
+			</footer>
+		</div>
+		<!-- build:js js/main.min.js -->
+		<script src="js/main.min.js"> </script>
+		<!-- endbuild -->
+	</body>
+</html>

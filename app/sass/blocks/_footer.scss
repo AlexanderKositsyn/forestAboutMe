@@ -1,8 +1,9 @@
 .footer {
   font-family: "robotolight";
   color: $white;
-  background-color: $charcoal-grey;
+  background-color: rgba($charcoal-grey, 0.85);
   padding-top: 29px;
+  flex: 0 1 auto;
   &__container {
     display: flex;
     flex-wrap: wrap;
@@ -12,6 +13,7 @@
     &--bottom {
       padding-left: 0;
       padding-right: 0;
+      max-width: initial;
     }
   }
   &__column {
