@@ -1,0 +1,9 @@
+.main {
+  &__container {
+    display: flex;
+  }
+  &--about {
+    padding-top: 68px;
+    padding-bottom: 66px;
+  }
+}

@@ -1,0 +1,20 @@
+.header {
+  position: relative;
+  background: url("../img/Background-header.jpg") center center / cover
+    no-repeat;
+  padding-top: 101px;
+  padding-bottom: 50px;
+  flex: 0 0 auto;
+  &__container {
+    position: relative;
+  }
+  &__socials {
+    position: absolute;
+    top: 53px;
+    left: 3;
+  }
+  &__avatar {
+  }
+  &__hamburger-menu {
+  }
+}
