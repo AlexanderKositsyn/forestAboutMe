@@ -1,0 +1,20 @@
+.title {
+  text-transform: uppercase;
+  font-family: "sansus_webissimoregular";
+  font-size: 63px;
+  text-align: center;
+  position: relative;
+  margin-bottom: 69px;
+  &--underlined {
+    &:after {
+      content: "";
+      position: absolute;
+      bottom: -22%;
+      left: 50%;
+      width: 89px;
+      height: 3px;
+      background-color: $charcoal-grey;
+      transform: translate(-50%, -50%);
+    }
+  }
+}

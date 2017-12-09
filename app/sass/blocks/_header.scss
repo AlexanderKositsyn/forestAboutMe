@@ -8,6 +8,14 @@
   &__container {
     position: relative;
   }
+  &__triangle {
+    position: absolute;
+    bottom: -77.8px;
+    right: 0;
+    left: 0;
+    fill: $white;
+    width: 100%;
+  }
   &__socials {
     position: absolute;
     top: 53px;

@@ -51,8 +51,17 @@ body {
 .wrapper {
   display: flex;
   flex-direction: column;
-  height: 100%;
+  min-height: 100%;
   overflow-x: hidden;
+  position: relative;
+  &--works {
+    background: url("../img/works_bg_footer.png") center bottom / 100% auto
+      no-repeat;
+  }
+  &--welcome {
+    background: url("../img/Background-header.jpg") center center / cover
+      no-repeat;
+  }
 }
 
 .container {

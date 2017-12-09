@@ -4,7 +4,7 @@
 		<meta charset="UTF-8"/>
 		<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 		<meta http-equiv="X-UA-Compatible" content="ie=edge"/>
-		<title>blog</title>
+		<title>welcome</title>
 		<!-- build:css css/vendor.min.css -->
 		<link rel="stylesheet" href="./lib/normalize.css"/>
 		<!-- endbuild -->
@@ -17,11 +17,16 @@
 	</head>
 	<body>
 		<script>svg4everybody(); // run it now or whenever you are ready</script>
-		<div class="wrapper">
-			<header class="header">
-				<div class="container haeder__container">
-					<ul class="header__socials social-list"> 
-						<!--цикл для генерирования социалок в хедере-->
+		<div class="wrapper wrapper--welcome"><a class="authorization-button" href="#">Авторизоваться</a>
+			<div class="welcome">
+				<div class="welcome__top">
+					<div class="welcome__pic"><img class="welcome__img" src="../img/avatar_my.jpg"/></div>
+				</div>
+				<div class="welcome__bottom">
+					<div class="welcome__name-text">Александр Косицын</div>
+					<div class="welcome__text-amplua">Личный сайт веб разработчика</div>
+					<ul class="welcome__socials social-list"> 
+						<!--цикл для генерирования социалок в футере-->
 						<li class="social-list__item"><a class="social-list__link" href="#">
 								<svg class="social-list__icon">
 									<use xlink:href="icons/sprite/sprite.svg#vk"></use>
@@ -35,105 +40,47 @@
 									<use xlink:href="icons/sprite/sprite.svg#in"></use>
 								</svg></a></li>
 					</ul>
-					<div class="header__avatar person-card"> 
-						<div class="person-card__top">
-							<div class="person-card__pic"><img class="person-card__img" src="../img/avatar_my.jpg"/></div>
-						</div>
-						<div class="person-card__bottom">
-							<div class="person-card__name-text">Блог</div>
-							<div class="person-card__text-amplua">Статьи, которые я написал</div>
-						</div>
-					</div>
-					<div class="header__hamburger-menu"><a class="hamburger" href="#"><span></span></a></div><a class="bottom-arrow" href="#" data-scroll-to="1"></a>
+					<div class="welcome__button-row"><a class="button button--welcome welcome__works" href="#">Мои работы</a><a class="button button--welcome welcome__about" href="#">Обо мне</a><a class="button button--welcome welcome__blog" href="#">Блог</a></div>
 				</div>
-			</header>
-			<main class="main main--about">
-				<div class="container main__container main__container--about">
-					<svg class="main__bg-left" width="100%" height="100%">
-						<use xlink:href="icons/sprite/sprite.svg#about_bg_left"></use>
-					</svg>
-					<svg class="main__bg-right" width="100%" height="100%">
-						<use xlink:href="icons/sprite/sprite.svg#about_bg_right"></use>
-					</svg>
-					<aside class="articles-nav">
-						<ul class="articles-nav__list">
-							<!--ПОтом пересмотреть и может как то исправить -->
-							<li class="articles-nav__item articles-nav__item--active">Самое важное в SASS</li>
-							<li class="articles-nav__item">Приёмы в вёрстке, без которых не обходится ни один сайт</li>
-							<li class="articles-nav__item">Самый необходимый набор Gulp плагинов</li>
-							<li class="articles-nav__item">Почему я выбрал Jade</li>
-						</ul>
-					</aside>
-					<ul class="article-list">
-						<li class="article-list__item">
-							<div class="article-list__item-title">Самое важное в SASS</div>
-							<div class="article-list__item-date">22 ноября 2016</div>
-							<div class="article-list__item-text">
-								Таким образом начало повседневной работы по формированию позиции позволяет выполнять важные задания по разработке направлений прогрессивного развития. Разнообразный и богатый опыт новая модель организационной деятельности играет важную роль в формировании новых предложений. Товарищи! новая модель организационной деятельности играет важную роль в формировании систем массового участия.
-								Не следует, однако забывать, что укрепление и развитие структуры обеспечивает широкому кругу (специалистов) участие в формировании систем массового участия. Идейные соображения высшего порядка, а также рамки и место обучения кадров обеспечивает широкому кругу (специалистов) участие в формировании позиций, занимаемых участниками в отношении поставленных задач. Товарищи! постоянный количественный рост и сфера нашей активности способствует подготовки и реализации модели развития. С другой стороны рамки и место обучения кадров влечет за собой процесс внедрения и модернизации системы обучения кадров, соответствует насущным потребностям.
-							</div>
-							<div class="article-list__item-code">
-								<div class="code-block">
-									<pre class="code-block__pre"><code class="code-block__code"><span class="token keyword">with</span><span class="token punctuation">(</span>obj<span class="token punctuation">) </span>
-<span class="token punctuation">{</span>
-<span class="token operator">...</span>код<span class="token operator">...</span>
-<span class="token punctuation">}</span></code><span class="code-block__numbers-row"><span></span><span></span><span></span><span></span></span></pre>
-								</div>
-							</div>
-						</li>
-						<li class="article-list__item">
-							<div class="article-list__item-title">Приёмы в вёрстке, без которых не обходится ни один сайт</div>
-							<div class="article-list__item-date">13 ноября 2016</div>
-							<div class="article-list__item-text">
-								Таким образом начало повседневной работы по формированию позиции позволяет выполнять важные задания по разработке направлений прогрессивного развития. Разнообразный и богатый опыт новая модель организационной деятельности играет важную роль в формировании новых предложений. Товарищи! новая модель организационной деятельности играет важную роль в формировании систем массового участия.
-								Не следует, однако забывать, что укрепление и развитие структуры обеспечивает широкому кругу (специалистов) участие в формировании систем массового участия. Идейные соображения высшего порядка, а также рамки и место обучения кадров обеспечивает широкому кругу (специалистов) участие в формировании позиций, занимаемых участниками в отношении поставленных задач. Товарищи! постоянный количественный рост и сфера нашей активности способствует подготовки и реализации модели развития. С другой стороны рамки и место обучения кадров влечет за собой процесс внедрения и модернизации системы обучения кадров, соответствует насущным потребностям.
-							</div>
-							<div class="article-list__item-code"> </div>
-						</li>
-					</ul>
-				</div>
-			</main>
-			<footer class="footer"> 
-				<div class="container footer__container footer__container--top">
-					<div class="footer__column footer__column--left">
-						<div class="footer__about">Этот сайт я сделал в рамках обучения в Школе онлайн образования LoftSchool. </div>
+			</div>
+			<div class="welcome-copyright">© Владимир Астахов | создано с любовью в LoftSchool | 2016</div>
+			<div class="authorization">
+				<h1 class="title title--underlined authorization__title">Авторизуйтесь</h1>
+				<form action="authorization.php">
+					<div class="authorization__wrapper-form">
+						<label class="authorization__label">
+							<svg class="authorization__input-svg">
+								<use xlink:href="icons/sprite/sprite.svg#login"></use>
+							</svg>
+							<input class="authorization__input" type="text" name="user_login" placeholder="Логин" required="required"/>
+						</label>
+						<label class="authorization__label">
+							<svg class="authorization__input-svg">
+								<use xlink:href="icons/sprite/sprite.svg#password"></use>
+							</svg>
+							<input class="authorization__input" type="text" name="user_login" placeholder="Пароль" required="required"/>
+						</label><label class="authorization__label-isHuman">
+<input type="checkbox" name="user_isHuman" class="authorization__input authorization__input--checkbox" value='yes'>
+<div class="authorization__checkbox-fake"></div>
+<div class="authorization__input-text">Я человек</div>
+</label>
+						<h5 class="title authorization__title-isHuman">Вы точно не робот?</h5><div class="authorization__row">
+<label class="authorization__label-radio authorization__label-radio--yes">
+<input name="user_isntRobot" type="radio" class="authorization__input  authorization__input--radio" value='yes' >
+<div class="authorization__radio-fake"></div>
+<div class="authorization__input-text">Да</div>
+</label>
+<label class="authorization__label-radio authorization__label-radio--no">
+<input name="user_isntRobot" type="radio" class="authorization__input authorization__input--radio"  value='card' checked>
+<div class="authorization__radio-fake"></div>
+<div class="authorization__input-text">Не уверен</div>
+</label>
+</div>
+<div class="authorization__row"><a class="button button--authorization authorization__to-main" href="#">На главную </a><button type="submit" class="button button--authorization authorization__submit ">Войти</button>
+</div>
 					</div>
-					<div class="footer__column footer__column--center">
-						<ul class=" footer__pages-list pages-list"> 
-							<!--цикл для генерирования социалок в хедере-->
-							<li class="pages-list__item"><a class="pages-list__link" href="#">Мои работы</a></li>
-							<li class="pages-list__item"><a class="pages-list__link" href="#">Обо мне</a></li>
-							<li class="pages-list__item"><a class="pages-list__link" href="#">Блог</a></li>
-							<li class="pages-list__item"><a class="pages-list__link" href="#">Авторизация</a></li>
-						</ul>
-						<ul class="footer__socials social-list"> 
-							<!--цикл для генерирования социалок в футере-->
-							<li class="social-list__item"><a class="social-list__link" href="#">
-									<svg class="social-list__icon">
-										<use xlink:href="icons/sprite/sprite.svg#vk"></use>
-									</svg></a></li>
-							<li class="social-list__item"><a class="social-list__link" href="#">
-									<svg class="social-list__icon">
-										<use xlink:href="icons/sprite/sprite.svg#github"></use>
-									</svg></a></li>
-							<li class="social-list__item"><a class="social-list__link" href="#">
-									<svg class="social-list__icon">
-										<use xlink:href="icons/sprite/sprite.svg#in"></use>
-									</svg></a></li>
-						</ul>
-					</div>
-					<div class="footer__column footer__column--right">
-						<div class="footer__quote">
-							Всегда пишите код так, будто сопровождать его будет склонный к насилию психопат, который знает, где вы живете.<br>
-							<span class='footer__quote-author'> — Martin Golding</span>
-							 
-						</div>
-					</div>
-				</div>
-				<div class="container footer__container footer__container--bottom">
-					<div class="footer__copyright">© Александр Косицын | Создано с любовью в LoftSchool | 2017</div>
-				</div>
-			</footer>
+				</form>
+			</div>
 		</div>
 		<!-- build:js js/main.min.js -->
 		<script src="js/main.min.js"> </script>

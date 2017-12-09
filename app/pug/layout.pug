@@ -1,12 +1,18 @@
+//- здесь нужно указать вот такие переменные
+//- title - название страницы
+//- wrapper_modif - МОДИФИКАТОР для wrapper
+//- footer_modif - МОДИФИКАТОР для footer
+//- isPage - включает header footer и main часть
+block variables
+
 <!DOCTYPE html>
 html(lang="en")
     head
         meta(charset="UTF-8")
         meta(name="viewport", content="width=device-width, initial-scale=1.0")
-        meta(http-equiv="X-UA-Compatible", content="ie=edge")
-        //-тут нужно задать название страницы ////////////////////////////////////////////////////////////////////////////
-        block title 
-            title forestAboutMe
+        meta(http-equiv="X-UA-Compatible", content="ie=edge")   
+        //- тут нужно задать title для страницы
+        title #{title}
         |
         // build:css css/vendor.min.css 
         link(rel="stylesheet" href="./lib/normalize.css" ) 
@@ -19,10 +25,13 @@ html(lang="en")
         // build:js js/vendor.min.js \
         script( src="./lib/svg4everybody.min.js")
         // endbuild  
+
+        
     body
         script.
             svg4everybody(); // run it now or whenever you are ready
-        div(class="wrapper")
+        div(class=`wrapper ${wrapper_modif}`)
+            - if (isPage) {
             //-тут нужно задать новую плашку с аватаркой ////////////////////////////////////////////////////////////////////////////
             include blocks/header
             //-тут нужно задать новое наполнение (внутри есть block main) /////////////////////////////////////////////////////////////////
@@ -30,9 +39,14 @@ html(lang="en")
              //-тут ничего задавать не нужно просто include пока ///////////////////////////////////////////////////////////////////////
             include blocks/footer.pug
             
+            - }
+            //- если нужно что добавить во wrapper
+            block wrapper_addon
+            
             
 
-  
+        //- дополнительные скрипты для страниц тут
+        block scripts
 
         // build:js js/main.min.js 
         script(src="js/main.min.js") 

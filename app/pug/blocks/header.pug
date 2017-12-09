@@ -1,5 +1,7 @@
 header(class="header")
                 .container.haeder__container
+                    svg(class="header__triangle"  width="100%" )
+                        use(xlink:href="icons/sprite/sprite.svg#bg")
                     - var values = ['vk','github','in'];
                     ul(class="header__socials social-list") 
                         //цикл для генерирования социалок в хедере
@@ -8,6 +10,7 @@ header(class="header")
                                 a(class="social-list__link" href='#')
                                     svg(class="social-list__icon")
                                         use(xlink:href="icons/sprite/sprite.svg#" + val)
+                    //- этот блок можно изменять в других файлах
                     block person-card
                         div(class="header__avatar person-card") 
                             .person-card__top

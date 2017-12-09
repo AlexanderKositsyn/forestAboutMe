@@ -1,72 +1,67 @@
 extends ../layout.pug
 
-block title
-    title blog
-
-block main 
-    main(class='main main--about')
-        .container.main__container.main__container--about
-            svg(class="main__bg-left"  width="100%" height='100%')
-                use(xlink:href="icons/sprite/sprite.svg#about_bg_left")
-            svg(class="main__bg-right" width="100%" height='100%')
-                use(xlink:href="icons/sprite/sprite.svg#about_bg_right" )
-            aside(class="articles-nav")
-                - 
-                    var 
-                    articles_themes = [
-                        'Приёмы в вёрстке, без которых не обходится ни один сайт',
-                        'Самый необходимый набор Gulp плагинов',
-                        'Почему я выбрал Jade'
-                        ];
-                ul(class="articles-nav__list")
-                    //ПОтом пересмотреть и может как то исправить 
-                    li(class="articles-nav__item articles-nav__item--active").
-                        Самое важное в SASS
-                    each theme in articles_themes
-                        li(class="articles-nav__item")= theme
-                            
-                            
-                        
-            ul.article-list
-                li(class="article-list__item")
-                    .article-list__item-title.
-                        Самое важное в SASS
-                    .article-list__item-date.
-                        22 ноября 2016
-                    .article-list__item-text.
-                        Таким образом начало повседневной работы по формированию позиции позволяет выполнять важные задания по разработке направлений прогрессивного развития. Разнообразный и богатый опыт новая модель организационной деятельности играет важную роль в формировании новых предложений. Товарищи! новая модель организационной деятельности играет важную роль в формировании систем массового участия.
-                        Не следует, однако забывать, что укрепление и развитие структуры обеспечивает широкому кругу (специалистов) участие в формировании систем массового участия. Идейные соображения высшего порядка, а также рамки и место обучения кадров обеспечивает широкому кругу (специалистов) участие в формировании позиций, занимаемых участниками в отношении поставленных задач. Товарищи! постоянный количественный рост и сфера нашей активности способствует подготовки и реализации модели развития. С другой стороны рамки и место обучения кадров влечет за собой процесс внедрения и модернизации системы обучения кадров, соответствует насущным потребностям.
-                    .article-list__item-code
-                        .code-block
-                            pre.code-block__pre
-                                code.code-block__code
-                                    span(class="token keyword") with
-                                    span(class="token punctuation") (
-                                    |obj
-                                    span(class="token punctuation") ) 
-                                    |
-                                    |
-                                    span(class="token punctuation") {
-                                    |
-                                    |
-                                    span(class="token operator") ...
-                                    | код
-                                    span(class="token operator") ...
-                                    |
-                                    |
-                                    span(class="token punctuation") }
-                                span.code-block__numbers-row
-                                    span
-                                    span
-                                    span
-                                    span
-                            
-                li(class="article-list__item")
-                    .article-list__item-title.
-                        Приёмы в вёрстке, без которых не обходится ни один сайт
-                    .article-list__item-date.
-                        13 ноября 2016
-                    .article-list__item-text.
-                        Таким образом начало повседневной работы по формированию позиции позволяет выполнять важные задания по разработке направлений прогрессивного развития. Разнообразный и богатый опыт новая модель организационной деятельности играет важную роль в формировании новых предложений. Товарищи! новая модель организационной деятельности играет важную роль в формировании систем массового участия.
-                        Не следует, однако забывать, что укрепление и развитие структуры обеспечивает широкому кругу (специалистов) участие в формировании систем массового участия. Идейные соображения высшего порядка, а также рамки и место обучения кадров обеспечивает широкому кругу (специалистов) участие в формировании позиций, занимаемых участниками в отношении поставленных задач. Товарищи! постоянный количественный рост и сфера нашей активности способствует подготовки и реализации модели развития. С другой стороны рамки и место обучения кадров влечет за собой процесс внедрения и модернизации системы обучения кадров, соответствует насущным потребностям.
-                    .article-list__item-code  
+//- создаем пременные для страницы works (задаем тайтл и модификатор для враппера)
+block variables
+    - title= 'welcome';
+    - wrapper_modif= 'wrapper--welcome';
+    //- выключаю футер,хедер и мейн
+    - isPage =false;
+block wrapper_addon
+    a(href='#').authorization-button Авторизоваться
+    .welcome
+        .welcome__top
+            .welcome__pic
+                img(class='welcome__img' src="../img/avatar_my.jpg")
+        .welcome__bottom
+            .welcome__name-text.
+                Александр Косицын
+            .welcome__text-amplua.
+                Личный сайт веб разработчика
+            - var values = ['vk','github','in'];
+            ul(class="welcome__socials social-list") 
+                            //цикл для генерирования социалок в футере
+                            each val in values
+                                li(class="social-list__item")
+                                    a(class="social-list__link" href='#')
+                                        svg(class="social-list__icon")
+                                            use(xlink:href="icons/sprite/sprite.svg#" + val)
+            .welcome__button-row
+                a(href='#').button.button--welcome.welcome__works Мои работы
+                a(href='#').button.button--welcome.welcome__about Обо мне
+                a(href='#').button.button--welcome.welcome__blog Блог
+    .welcome-copyright © Владимир Астахов | создано с любовью в LoftSchool | 2016
+    .authorization
+        h1.title.title--underlined.authorization__title Авторизуйтесь
+        form(action="authorization.php")
+            .authorization__wrapper-form
+                label.authorization__label
+                    svg.authorization__input-svg
+                        use(xlink:href=`icons/sprite/sprite.svg#login`)
+                    input(type="text" name='user_login' placeholder='Логин' class="authorization__input" required)
+                label.authorization__label
+                    svg.authorization__input-svg
+                        use(xlink:href=`icons/sprite/sprite.svg#password`)
+                    input(type="text" name='user_login' placeholder='Пароль' class="authorization__input" required)
+                <label class="authorization__label-isHuman">
+                    <input type="checkbox" name="user_isHuman" class="authorization__input authorization__input--checkbox" value='yes'>
+                    <div class="authorization__checkbox-fake"></div>
+                    <div class="authorization__input-text">Я человек</div>
+                </label>
+                h5.title.authorization__title-isHuman Вы точно не робот?
+                <div class="authorization__row">
+                    <label class="authorization__label-radio authorization__label-radio--yes">
+                        <input name="user_isntRobot" type="radio" class="authorization__input  authorization__input--radio" value='yes' >
+                        <div class="authorization__radio-fake"></div>
+                        <div class="authorization__input-text">Да</div>
+                    </label>
+                    <label class="authorization__label-radio authorization__label-radio--no">
+                        <input name="user_isntRobot" type="radio" class="authorization__input authorization__input--radio"  value='card' checked>
+                        <div class="authorization__radio-fake"></div>
+                        <div class="authorization__input-text">Не уверен</div>
+                    </label>
+                </div>
+                <div class="authorization__row">
+                    a(href='#').button.button--authorization.authorization__to-main На главную 
+                    <button type="submit" class="button button--authorization authorization__submit ">Войти</button>
+                </div>
+        

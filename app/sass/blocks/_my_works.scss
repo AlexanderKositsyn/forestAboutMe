@@ -1,0 +1,120 @@
+.my-works {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  height: 750px;
+  margin-bottom: 71px;
+
+  &__slider {
+    width: 50%;
+    height: 70%;
+    background-color: #e1e4d7;
+    flex: 0 0 auto;
+    order: 2;
+    overflow: hidden;
+  }
+  &__slider-img {
+    max-width: 100%;
+    width: 100%;
+  }
+
+  &__decription {
+    width: 50%;
+    height: 100%;
+    background-color: $light-grey;
+    order: 1;
+    flex: 0 0 auto;
+    position: relative;
+    text-align: center;
+  }
+  &__decription-wrapper {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 70%;
+    transform: translate(-50%, -50%);
+    text-transform: uppercase;
+  }
+  &__slider-buttons {
+    width: 50%;
+    height: 30%;
+    background-color: #f1ede1;
+    flex: 0 0 auto;
+    order: 3;
+    display: flex;
+  }
+  &__site-name {
+    text-align: center;
+    position: relative;
+    margin-bottom: 59px;
+    font-size: 35px;
+    font-family: "sansus_webissimoregular";
+    &:after {
+      content: "";
+      position: absolute;
+      bottom: -36%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 89px;
+      height: 3px;
+      background-color: $dark-sage;
+    }
+  }
+  &__site-technogies {
+    color: $fern-green;
+    font-family: "robotomedium";
+    margin-bottom: 58px;
+  }
+  &__site-link {
+    font-family: "robotomedium";
+    width: 250px;
+    border-radius: 50px;
+    background-color: $moss;
+    padding: 16px 21px 13px 18px;
+    display: inline-block;
+    margin: 0 auto;
+    color: $link-primary;
+    text-decoration: none;
+    text-transform: initial;
+    vertical-align: middle;
+  }
+  &__svg-link {
+    width: 20px;
+    height: 19px;
+    vertical-align: middle;
+    fill: $link-primary;
+    margin-right: 12px;
+  }
+  &__button-left {
+    position: relative;
+    width: 50%;
+    flex: 1 1 auto;
+    overflow: hidden;
+  }
+  &__button-right {
+    position: relative;
+    width: 50%;
+    flex: 1 1 auto;
+    overflow: hidden;
+  }
+  &__img {
+    max-width: 100%;
+    width: 100%;
+  }
+  &__arrow-down {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 43px;
+    height: 27px;
+  }
+  &__arrow-up {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 43px;
+    height: 27px;
+  }
+}
