@@ -5,19 +5,22 @@ block variables
     - title= 'about';
     - wrapper_modif= 'wrapper--about';
     - footer_modif= 'footer--about';
-    - isPage =true;
+    - isPage = true;
+    - header_modif= 'header--about'
 
 block scripts
     script( src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAFgkyZElMybUir8MZo3_jbwRXx0zWrya0&callback=initMap")
 
-
+//- это из блока header тут можно вставить svg 
+block headerSvg
+    +svgTemp("header__svg-portfolio", 'portfolio_header')
 
 //- это из блока header замена другим блоком
 block person-card
     div(class="header__avatar person-card") 
         .person-card__top
             .person-card__pic
-                img(class='person-card__img' src="../img/avatar_my.jpg")
+                img(class='person-card__img' src=require("../../img/avatar_my.jpg"))
         .person-card__bottom
             .person-card__fio.
                 Александр Косицын
@@ -27,37 +30,41 @@ block person-card
 block main 
     main(class='main main--about-me')
         section.about-me 
+            +svgTemp('about-me__bg-left', 'about_bg_left')
+            +svgTemp('about-me__bg-right', 'about_bg_right')
             .about-me__description
                 h1.title.title--underlined.about-me__title-about Обо мне
+                    +svgTemp('about-me__svg-about', 'about_header')
                 .about-me__pic
-                    img(src='./img/avatar_my.jpg').about-me__img
+                    img(src=require('../../img/avatar_my.jpg')).about-me__img
                 h1.title.title--underlined.about-me__title-whoIsI Кто я
-                .about-me__text.
-                    Я веб разработчик из Новосибирска. Мне 27 лет. Я занимаюсь разработкой современных сайтов и приложений. Мне нравится делать интересные и современные проекты.
-                    Этот сайт я сделал в рамках обучения в Школе онлайн образования LoftSchool. Чуть позже я освежу в нём свой контент. А пока посмотрите,как тут всё классно и красиво!
+                .about-me__text
+                    p Я веб разработчик из Новосибирска. Мне 27 лет. Я занимаюсь разработкой современных сайтов и приложений. Мне нравится делать интересные и современные проекты.
+                    p Этот сайт я сделал в рамках обучения в Школе онлайн образования LoftSchool. Чуть позже я освежу в нём свой контент. А пока посмотрите,как тут всё классно и красиво!
             .about-me__skills
                 h1.title.title--underlined.about-me__title-myBenefit Чем я могу быть вам полезен
                 .about-me__skills-text.
                     Больше всего меня привлекет Frontend разработка, но я также знаком и могу решать не сложные задачи на Backend. Но давайте по порядку.
-                .about-me__skills-frontend
-                    .about-me__frontend-title Frontend
-                    ul.about-me__frontend-list
-                        li.about-me__frontend-item HTML5
-                        li.about-me__frontend-item CSS3
-                        li.about-me__frontend-item JavaScript<br>& jQuery
-                .about-me__skills-backend
-                    .about-me__backend-title Backend
-                    ul.about-me__backend-list
-                        li.about-me__backend-item PHP
-                        li.about-me__backend-item mySQL
-                        li.about-me__backend-item Node.js<br>& npm
-                        li.about-me__backend-item Mongo.db
-                .about-me__skills-workflow
-                    .about-me__workflow-title WorkFlow
-                    ul.about-me__workflow-list
-                        li.about-me__workflow-item Git
-                        li.about-me__workflow-item Gulp
-                        li.about-me__workflow-item Bower
+                ul.about-me__skills-list
+                    li.about-me__skills-item.about-me__skills-item--frontend
+                        .about-me__title-skills Frontend
+                        ul.about-me__circle-list
+                            li.about-me__circle-item HTML5
+                            li.about-me__circle-item CSS3
+                            li.about-me__circle-item JavaScript<br>& jQuery
+                    li.about-me__skills-item.about-me__skills-item--backend
+                        .about-me__title-skills Backend
+                        ul.about-me__circle-list
+                            li.about-me__circle-item PHP
+                            li.about-me__circle-item mySQL
+                            li.about-me__circle-item Node.js<br>& npm
+                            li.about-me__circle-item Mongo.db
+                    li.about-me__skills-item.about-me__skills-item--workflow
+                        .about-me__title-skills WorkFlow
+                        ul.about-me__circle-list
+                            li.about-me__circle-item Git
+                            li.about-me__circle-item Gulp
+                            li.about-me__circle-item Bower
         section.contacts
             .map#map
             .contacts__wrapper
@@ -69,7 +76,7 @@ block main
                     each val in icons
                         li.contacts__item
                             svg.contacts__svg
-                                use(xlink:href=`icons/sprite/sprite.svg#${val[0]}`)
+                                use(xlink:href=require('../../icons/sprite/sprite.svg')+"#"+`${val[0]}`)
                             | #{val[1]}
 
     

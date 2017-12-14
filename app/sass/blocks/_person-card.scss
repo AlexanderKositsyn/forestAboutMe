@@ -3,6 +3,8 @@
   margin: 0 auto;
   color: $white;
   text-align: center;
+  position: relative;
+
   &__top {
   }
   &__bottom {
@@ -36,10 +38,20 @@
       background-color: $white;
     }
   }
+  &__svg-blog {
+    position: absolute;
+    top: -26%;
+    fill: $white;
+    opacity: 0.2;
+    left: 14%;
+  }
   &__fio {
     font-size: 35px;
     font-family: "robotomedium";
     margin-bottom: 7px;
+    @include mobile {
+      font-size: 21px;
+    }
   }
   &__whoIsSite {
   }

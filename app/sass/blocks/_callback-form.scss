@@ -9,7 +9,18 @@
   padding-top: 32px;
   overflow: hidden;
   &__title {
-    font-size: 35px;
+    font-size: 30px;
+    &:after {
+      bottom: -63%;
+    }
+    @include tablet {
+      width: 96%;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    @include mobile {
+      font-size: 21px;
+    }
   }
   &__name {
     width: 80%;
@@ -62,6 +73,11 @@
     &:hover {
       background-color: rgba($fern-green, 1);
     }
+  }
+
+  @include tablet {
+    max-width: 320px;
+    width: 94%;
   }
   //   input::-moz-placeholder {...}
   //   textarea::-moz-placeholder {...}

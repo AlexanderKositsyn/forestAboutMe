@@ -1,24 +1,19 @@
-header(class="header")
+header(class=`header ${header_modif}`)
                 .container.haeder__container
+                    //- тут можно вставить svg для фона хедер
+                    block headerSvg
                     svg(class="header__triangle"  width="100%" )
-                        use(xlink:href="icons/sprite/sprite.svg#bg")
-                    - var values = ['vk','github','in'];
-                    ul(class="header__socials social-list") 
-                        //цикл для генерирования социалок в хедере
-                        each val in values
-                            li(class="social-list__item")
-                                a(class="social-list__link" href='#')
-                                    svg(class="social-list__icon")
-                                        use(xlink:href="icons/sprite/sprite.svg#" + val)
+                        use(xlink:href=require("../../icons/sprite/sprite.svg") +"#bg")
+                    +socialListMixin('header__socials', [['vk','https://vk.com/alex_gorn20'],['github','https://github.com/AlexanderKositsyn'],['in','#']])
                     //- этот блок можно изменять в других файлах
                     block person-card
                         div(class="header__avatar person-card") 
                             .person-card__top
                                 .person-card__pic
-                                    img(class='person-card__img' src="../img/avatar_my.jpg")
+                                    img(class='person-card__img' src=require("../../img/avatar_my.jpg"))
                             .person-card__bottom
-                                .person-card__name-text.
-                                    Блог
+                                .person-card__name-text Блог
+                                    +svgTemp("person-card__svg-blog", 'blog_header')
                                 .person-card__text-amplua.
                                     Статьи, которые я написал
                     div(class="header__hamburger-menu")

@@ -1,9 +1,14 @@
 .feeds-list {
   display: flex;
-  justify-content: center;
+  justify-content: space-around;
   margin-bottom: 67px;
+  margin-left: -20px;
+  margin-top: -20px;
   &__item {
-    flex: 0 1 30%;
+    flex: 0 1 50%;
+    max-width: 380px;
+    margin-left: 20px;
+    margin-top: 20px;
   }
   &__picture {
     width: 77px;
@@ -34,5 +39,8 @@
     color: $charcoal-grey;
     font-family: "robotoitalic";
     text-align: center;
+  }
+  @include mobile {
+    flex-direction: column;
   }
 }

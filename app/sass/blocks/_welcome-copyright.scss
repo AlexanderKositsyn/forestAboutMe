@@ -1,7 +1,8 @@
 .welcome-copyright {
-  position: absolute;
-  bottom: 5%;
-  left: 50%;
-  transform: translate(-50%, -50%);
   color: $white;
+  width: 100%;
+  text-align: center;
+  min-height: 40px;
+  padding-left: 10px;
+  padding-right: 10px;
 }

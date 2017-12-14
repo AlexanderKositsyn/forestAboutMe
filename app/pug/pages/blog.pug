@@ -39,22 +39,41 @@ block main
                         .code-block
                             pre.code-block__pre
                                 code.code-block__code
-                                    span(class="token keyword") with
-                                    span(class="token punctuation") (
-                                    |obj
-                                    span(class="token punctuation") ) 
+                                    span(class="code-block__comment") //присвоить
                                     |
                                     |
-                                    span(class="token punctuation") {
+                                    span(class="code-block__keyword") $
+                                    span(class="code-block__punctuation") (
+                                    span(class="code-block__keyword") document
+                                    span(class="code-block__punctuation") ).
+                                    span(class="code-block__keyword") data
+                                    span(class="code-block__punctuation") (
+                                    span(class="code-block__string") 'prop' 
+                                    span(class="code-block__punctuation") , { 
+                                    span(class="code-block__keyword") anything
+                                    span(class="code-block__punctuation") : 
+                                    span(class="code-block__string") "любой объект" 
+                                    span(class="code-block__punctuation") })
                                     |
                                     |
-                                    span(class="token operator") ...
-                                    | код
-                                    span(class="token operator") ...
+                                    |
+                                    span(class="code-block__comment") //прочитать
                                     |
                                     |
-                                    span(class="token punctuation") }
+                                    span(class="code-block__keyword") $
+                                    span(class="code-block__punctuation") (
+                                    span(class="code-block__keyword") document
+                                    span(class="code-block__punctuation") ).
+                                    span(class="code-block__keyword") data
+                                    span(class="code-block__punctuation") (
+                                    span(class="code-block__string") 'prop' 
+                                    span(class="code-block__punctuation") , { 
+                                    span(class="code-block__keyword") anything
+                                    span(class="code-block__punctuation") : 
+                                    span(class="code-block__string") "любой объект" 
+                                    span(class="code-block__punctuation") })
                                 span.code-block__numbers-row
+                                    span
                                     span
                                     span
                                     span

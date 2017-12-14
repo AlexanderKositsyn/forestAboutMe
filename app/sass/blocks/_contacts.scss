@@ -1,7 +1,8 @@
 .contacts {
-  padding-bottom: 286px;
+  padding-bottom: 366px;
   padding-top: 328px;
   position: relative;
+  z-index: 1;
   &__wrapper {
     width: 380px;
     opacity: 0.85;
@@ -9,10 +10,21 @@
     border-radius: 10px;
     margin: 0 auto;
     padding: 36px 40px 36px 40px;
+    @include tablet {
+      width: 96%;
+      max-width: 350px;
+    }
+    @include mobile {
+      width: 100%;
+      border-radius: 0;
+    }
   }
 
   &__title {
     font-size: 35px;
+    &:after {
+      top: 75px;
+    }
   }
   &__list {
   }
@@ -31,5 +43,12 @@
     fill: $moss;
     vertical-align: middle;
     margin-right: 10px;
+  }
+  @include tablet {
+    padding-top: 198px;
+  }
+  @include mobile {
+    padding-top: 0;
+    padding-bottom: 616px;
   }
 }

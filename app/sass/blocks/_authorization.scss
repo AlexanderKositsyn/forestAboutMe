@@ -1,20 +1,18 @@
 .authorization {
-  display: none;
   background-color: rgba(#122620, 0.6);
   color: $white;
   width: 380px;
   border-radius: 10px;
   overflow: hidden;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  position: absolute;
   padding-top: 35px;
   &__title {
     font-size: 35px;
     margin-bottom: 60px;
     &:after {
       background-color: $white;
+    }
+    @include mobile {
+      margin-bottom: 25px;
     }
   }
   &__wrapper-form {
@@ -113,6 +111,9 @@
     &:last-child {
       margin-bottom: 0;
     }
+    @include mobile {
+      margin-bottom: 10px;
+    }
   }
   &__label-radio {
     display: flex;
@@ -132,9 +133,5 @@
   &__to-main {
   }
   &__submit {
-  }
-
-  &--visible {
-    display: block;
   }
 }

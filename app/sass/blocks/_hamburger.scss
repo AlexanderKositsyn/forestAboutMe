@@ -47,4 +47,7 @@
       position: absolute;
     }
   }
+  @include mobile {
+    top: 13px;
+  }
 }

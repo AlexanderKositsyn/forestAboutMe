@@ -43,6 +43,9 @@ body {
   box-sizing: border-box;
   height: 100%;
   width: 100%;
+  @include tablet {
+    font-size: 14px;
+  }
 }
 
 body {
@@ -61,6 +64,10 @@ body {
   &--welcome {
     background: url("../img/Background-header.jpg") center center / cover
       no-repeat;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow: hidden;
   }
 }
 
@@ -69,4 +76,8 @@ body {
   margin: 0 auto;
   padding-left: 38px;
   padding-right: 38px;
+  @include tablet {
+    padding-left: 8px;
+    padding-right: 8px;
+  }
 }

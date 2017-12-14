@@ -1,5 +1,7 @@
 extends ../layout.pug
 
+
+
 //- создаем пременные для страницы works (задаем тайтл и модификатор для враппера)
 block variables
     - title= 'welcome';
@@ -8,60 +10,55 @@ block variables
     - isPage =false;
 block wrapper_addon
     a(href='#').authorization-button Авторизоваться
-    .welcome
-        .welcome__top
-            .welcome__pic
-                img(class='welcome__img' src="../img/avatar_my.jpg")
-        .welcome__bottom
-            .welcome__name-text.
-                Александр Косицын
-            .welcome__text-amplua.
-                Личный сайт веб разработчика
-            - var values = ['vk','github','in'];
-            ul(class="welcome__socials social-list") 
-                            //цикл для генерирования социалок в футере
-                            each val in values
-                                li(class="social-list__item")
-                                    a(class="social-list__link" href='#')
-                                        svg(class="social-list__icon")
-                                            use(xlink:href="icons/sprite/sprite.svg#" + val)
-            .welcome__button-row
-                a(href='#').button.button--welcome.welcome__works Мои работы
-                a(href='#').button.button--welcome.welcome__about Обо мне
-                a(href='#').button.button--welcome.welcome__blog Блог
+    .flipper
+        .flipper__wrapper
+            .flipper__welcome.welcome
+                .welcome__top
+                    .welcome__pic
+                        img(class='welcome__img' src=require("../../img/avatar_my.jpg"))
+                .welcome__bottom
+                    .welcome__name-text.
+                        Александр Косицын
+                    .welcome__text-amplua.
+                        Личный сайт веб разработчика
+                    +socialListMixin('welcome__socials', [['vk','https://vk.com/alex_gorn20'],['github','https://github.com/AlexanderKositsyn'],['in','#']])
+                    .welcome__button-row
+                        a(href='./works.html').button.button--welcome.welcome__works Мои работы
+                        a(href='./about.html').button.button--welcome.welcome__about Обо мне
+                        a(href='./blog.html').button.button--welcome.welcome__blog Блог
+            
+            .flipper__authorization.authorization
+                h1.title.title--underlined.authorization__title Авторизуйтесь
+                form(action="authorization.php")
+                    .authorization__wrapper-form
+                        label.authorization__label
+                            svg.authorization__input-svg
+                                use(xlink:href=require(`../../icons/sprite/sprite.svg`)+'#login')
+                            input(type="text" name='user_login' placeholder='Логин' class="authorization__input" required)
+                        label.authorization__label
+                            svg.authorization__input-svg
+                                use(xlink:href=require(`../../icons/sprite/sprite.svg`)+"#password")
+                            input(type="text" name='user_login' placeholder='Пароль' class="authorization__input" required)
+                        <label class="authorization__label-isHuman">
+                            <input type="checkbox" name="user_isHuman" class="authorization__input authorization__input--checkbox" value='yes'>
+                            <div class="authorization__checkbox-fake"></div>
+                            <div class="authorization__input-text">Я человек</div>
+                        </label>
+                        h5.title.authorization__title-isHuman Вы точно не робот?
+                        <div class="authorization__row">
+                            <label class="authorization__label-radio authorization__label-radio--yes">
+                                <input name="user_isntRobot" type="radio" class="authorization__input  authorization__input--radio" value='yes' >
+                                <div class="authorization__radio-fake"></div>
+                                <div class="authorization__input-text">Да</div>
+                            </label>
+                            <label class="authorization__label-radio authorization__label-radio--no">
+                                <input name="user_isntRobot" type="radio" class="authorization__input authorization__input--radio"  value='card' checked>
+                                <div class="authorization__radio-fake"></div>
+                                <div class="authorization__input-text">Не уверен</div>
+                            </label>
+                        </div>
+                        <div class="authorization__row">
+                            a(href='#').button.button--authorization.authorization__to-main На главную 
+                            <button type="submit" class="button button--authorization authorization__submit ">Войти</button>
+                        </div>
     .welcome-copyright © Владимир Астахов | создано с любовью в LoftSchool | 2016
-    .authorization
-        h1.title.title--underlined.authorization__title Авторизуйтесь
-        form(action="authorization.php")
-            .authorization__wrapper-form
-                label.authorization__label
-                    svg.authorization__input-svg
-                        use(xlink:href=`icons/sprite/sprite.svg#login`)
-                    input(type="text" name='user_login' placeholder='Логин' class="authorization__input" required)
-                label.authorization__label
-                    svg.authorization__input-svg
-                        use(xlink:href=`icons/sprite/sprite.svg#password`)
-                    input(type="text" name='user_login' placeholder='Пароль' class="authorization__input" required)
-                <label class="authorization__label-isHuman">
-                    <input type="checkbox" name="user_isHuman" class="authorization__input authorization__input--checkbox" value='yes'>
-                    <div class="authorization__checkbox-fake"></div>
-                    <div class="authorization__input-text">Я человек</div>
-                </label>
-                h5.title.authorization__title-isHuman Вы точно не робот?
-                <div class="authorization__row">
-                    <label class="authorization__label-radio authorization__label-radio--yes">
-                        <input name="user_isntRobot" type="radio" class="authorization__input  authorization__input--radio" value='yes' >
-                        <div class="authorization__radio-fake"></div>
-                        <div class="authorization__input-text">Да</div>
-                    </label>
-                    <label class="authorization__label-radio authorization__label-radio--no">
-                        <input name="user_isntRobot" type="radio" class="authorization__input authorization__input--radio"  value='card' checked>
-                        <div class="authorization__radio-fake"></div>
-                        <div class="authorization__input-text">Не уверен</div>
-                    </label>
-                </div>
-                <div class="authorization__row">
-                    a(href='#').button.button--authorization.authorization__to-main На главную 
-                    <button type="submit" class="button button--authorization authorization__submit ">Войти</button>
-                </div>
-        
