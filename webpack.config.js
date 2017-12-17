@@ -60,6 +60,7 @@ module.exports = {
                 sourceMap: true
               }
             },
+            { loader: "postcss-loader", options: { sourceMap: true } },
             {
               loader: "sass-loader",
               options: {
@@ -73,7 +74,10 @@ module.exports = {
         test: /\.css$/,
         use: ExtractTextPlugin.extract({
           publicPath: "../",
-          use: ["css-loader"]
+          use: [
+            "css-loader",
+            { loader: "postcss-loader", options: { sourceMap: true } }
+          ]
         })
       },
       {

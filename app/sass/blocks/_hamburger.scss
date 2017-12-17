@@ -1,9 +1,7 @@
 .hamburger {
-  position: absolute;
   width: 24px;
   padding: 0px 0;
-  top: 47px;
-  right: 3%;
+
   -webkit-transition: all 0.4s;
   -o-transition: all 0.4s;
   transition: all 0.4s;
@@ -26,7 +24,7 @@
   &:before {
     margin-top: 0;
   }
-  &--active {
+  &--plus {
     position: relative;
     z-index: 1;
     span {
@@ -46,8 +44,5 @@
       top: 10px;
       position: absolute;
     }
-  }
-  @include mobile {
-    top: 13px;
   }
 }

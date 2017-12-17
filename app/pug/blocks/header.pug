@@ -1,9 +1,9 @@
 header(class=`header ${header_modif}`)
-                .container.haeder__container
+                svg(class="header__triangle"  width="100%" )
+                    use(xlink:href=require("../../icons/sprite/sprite.svg") +"#bg")
+                .container.header__container
                     //- тут можно вставить svg для фона хедер
                     block headerSvg
-                    svg(class="header__triangle"  width="100%" )
-                        use(xlink:href=require("../../icons/sprite/sprite.svg") +"#bg")
                     +socialListMixin('header__socials', [['vk','https://vk.com/alex_gorn20'],['github','https://github.com/AlexanderKositsyn'],['in','#']])
                     //- этот блок можно изменять в других файлах
                     block person-card
@@ -19,4 +19,5 @@ header(class=`header ${header_modif}`)
                     div(class="header__hamburger-menu")
                         a(href="#" class="hamburger")
                             span
+                    +pagesListMixin('header__pages-list',[['Мои работы','./works.html'],['Обо мне','./about.html'],['Блог','./blog.html'],['Авторизация','/']], pagesListActiveItem)
                     a(href='#' class="bottom-arrow" data-scroll-to="1")

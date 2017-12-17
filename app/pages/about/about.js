@@ -7,5 +7,7 @@ import svg4everybody from "../../../node_modules/svg4everybody/dist/svg4everybod
 
 svg4everybody();
 /*---js modules---*/
-import initMap from "./js_modules/map";
+import initMap from "../../js_modules/map";
+import initHamburger from "../../js_modules/hamburger";
+initHamburger();
 initMap();

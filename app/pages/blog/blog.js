@@ -6,3 +6,7 @@ require("../../sass/base.scss");
 import svg4everybody from "../../../node_modules/svg4everybody/dist/svg4everybody";
 
 svg4everybody();
+
+/*---js modules---*/
+import initHamburger from "../../js_modules/hamburger";
+initHamburger();

@@ -6,7 +6,7 @@ import "../../sass/base.scss";
 import svg4everybody from "../../../node_modules/svg4everybody/dist/svg4everybody";
 
 /*---js modules---*/
-import authorizationButtonInit from "./js_modules/authorization-button";
+import authorizationButtonInit from "../../js_modules/authorization-button";
 
 authorizationButtonInit();
 

@@ -40,10 +40,11 @@
   }
   &__svg-blog {
     position: absolute;
-    top: -26%;
+    top: 69%;
     fill: $white;
     opacity: 0.2;
-    left: 14%;
+    left: 50%;
+    transform: translate(-50%, -50%);
   }
   &__fio {
     font-size: 35px;

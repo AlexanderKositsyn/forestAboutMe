@@ -4,12 +4,15 @@ block variables
     - title= 'blog';
     - wrapper_modif= 'wrapper--blog';
     - isPage =true;
+    - pagesListActiveItem = 2;
 
 
 block main 
     main(class='main main--articles')
         .container.main__container.main__container--articles
-            aside(class="articles-nav")
+            aside(class="articles-nav articles-nav--blog")
+                a.articles-nav__swipe(href="#")
+                    +svgTemp('articles-nav__swipe-svg', 'swipe_svg')
                 - 
                     var 
                     articles_themes = [
@@ -17,7 +20,7 @@ block main
                         'Самый необходимый набор Gulp плагинов',
                         'Почему я выбрал Jade'
                         ];
-                ul(class="articles-nav__list")
+                ul(class="articles-nav__list articles-nav__list--swipe-on")
                     //ПОтом пересмотреть и может как то исправить 
                     li(class="articles-nav__item articles-nav__item--active").
                         Самое важное в SASS
@@ -39,39 +42,39 @@ block main
                         .code-block
                             pre.code-block__pre
                                 code.code-block__code
-                                    span(class="code-block__comment") //присвоить
-                                    |
-                                    |
-                                    span(class="code-block__keyword") $
-                                    span(class="code-block__punctuation") (
-                                    span(class="code-block__keyword") document
-                                    span(class="code-block__punctuation") ).
-                                    span(class="code-block__keyword") data
-                                    span(class="code-block__punctuation") (
-                                    span(class="code-block__string") 'prop' 
-                                    span(class="code-block__punctuation") , { 
-                                    span(class="code-block__keyword") anything
-                                    span(class="code-block__punctuation") : 
-                                    span(class="code-block__string") "любой объект" 
-                                    span(class="code-block__punctuation") })
-                                    |
-                                    |
-                                    |
-                                    span(class="code-block__comment") //прочитать
-                                    |
-                                    |
-                                    span(class="code-block__keyword") $
-                                    span(class="code-block__punctuation") (
-                                    span(class="code-block__keyword") document
-                                    span(class="code-block__punctuation") ).
-                                    span(class="code-block__keyword") data
-                                    span(class="code-block__punctuation") (
-                                    span(class="code-block__string") 'prop' 
-                                    span(class="code-block__punctuation") , { 
-                                    span(class="code-block__keyword") anything
-                                    span(class="code-block__punctuation") : 
-                                    span(class="code-block__string") "любой объект" 
-                                    span(class="code-block__punctuation") })
+                                        span(class="code-block__comment") //присвоить
+                                        |
+                                        |
+                                        span(class="code-block__keyword") $
+                                        span(class="code-block__punctuation") (
+                                        span(class="code-block__keyword") document
+                                        span(class="code-block__punctuation") ).
+                                        span(class="code-block__keyword") data
+                                        span(class="code-block__punctuation") (
+                                        span(class="code-block__string") 'prop' 
+                                        span(class="code-block__punctuation") , { 
+                                        span(class="code-block__keyword") anything
+                                        span(class="code-block__punctuation") : 
+                                        span(class="code-block__string") "любой объект" 
+                                        span(class="code-block__punctuation") })
+                                        |
+                                        |
+                                        |
+                                        span(class="code-block__comment") //прочитать
+                                        |
+                                        |
+                                        span(class="code-block__keyword") $
+                                        span(class="code-block__punctuation") (
+                                        span(class="code-block__keyword") document
+                                        span(class="code-block__punctuation") ).
+                                        span(class="code-block__keyword") data
+                                        span(class="code-block__punctuation") (
+                                        span(class="code-block__string") 'prop' 
+                                        span(class="code-block__punctuation") , { 
+                                        span(class="code-block__keyword") anything
+                                        span(class="code-block__punctuation") : 
+                                        span(class="code-block__string") "любой объект" 
+                                        span(class="code-block__punctuation") })
                                 span.code-block__numbers-row
                                     span
                                     span

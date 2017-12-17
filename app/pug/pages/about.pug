@@ -7,6 +7,7 @@ block variables
     - footer_modif= 'footer--about';
     - isPage = true;
     - header_modif= 'header--about'
+    - pagesListActiveItem = 1;
 
 block scripts
     script( src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAFgkyZElMybUir8MZo3_jbwRXx0zWrya0&callback=initMap")
@@ -49,22 +50,73 @@ block main
                     li.about-me__skills-item.about-me__skills-item--frontend
                         .about-me__title-skills Frontend
                         ul.about-me__circle-list
-                            li.about-me__circle-item HTML5
-                            li.about-me__circle-item CSS3
-                            li.about-me__circle-item JavaScript<br>& jQuery
+                            li.about-me__circle-item 
+                                <svg class='about-me__circle-svg' viewBox ='0 0 100 100'>
+                                    <circle class='outer-circle' stroke-dasharray="95, 158" ; r='25' cx='50' cy='50'/>
+                                    <circle class='inner-circle' r='35' cx='50' cy='50'/>
+                                </svg>   
+                                span.about-me__circle-text HTML5
+                            li.about-me__circle-item 
+                                <svg class='about-me__circle-svg' viewBox ='0 0 100 100'>
+                                    <circle class='outer-circle' stroke-dasharray="10, 158" ; r='25' cx='50' cy='50'/>
+                                    <circle class='inner-circle' r='35' cx='50' cy='50'/>
+                                </svg>
+                                span.about-me__circle-text CSS3    
+                            li.about-me__circle-item
+                                
+                                <svg class='about-me__circle-svg' viewBox ='0 0 100 100'>
+                                    <circle class='outer-circle' stroke-dasharray="95, 158" ; r='25' cx='50' cy='50'/>
+                                    <circle class='inner-circle' r='35' cx='50' cy='50'/>
+                                </svg> 
+                                span.about-me__circle-text JavaScript<br>& jQuery   
                     li.about-me__skills-item.about-me__skills-item--backend
                         .about-me__title-skills Backend
                         ul.about-me__circle-list
-                            li.about-me__circle-item PHP
-                            li.about-me__circle-item mySQL
-                            li.about-me__circle-item Node.js<br>& npm
-                            li.about-me__circle-item Mongo.db
+                            li.about-me__circle-item            
+                                <svg class='about-me__circle-svg' viewBox ='0 0 100 100'>
+                                    <circle class='outer-circle' stroke-dasharray="111, 158" ; r='25' cx='50' cy='50'/>
+                                    <circle class='inner-circle' r='35' cx='50' cy='50'/>
+                                </svg>
+                                span.about-me__circle-text PHP   
+                            li.about-me__circle-item 
+                                <svg class='about-me__circle-svg' viewBox ='0 0 100 100'>
+                                    <circle class='outer-circle' stroke-dasharray="120, 158" ; r='25' cx='50' cy='50'/>
+                                    <circle class='inner-circle' r='35' cx='50' cy='50'/>
+                                </svg>   
+                                span.about-me__circle-text mySQL
+                            li.about-me__circle-item 
+                                <svg class='about-me__circle-svg' viewBox ='0 0 100 100'>
+                                    <circle class='outer-circle' stroke-dasharray="100, 158" ; r='25' cx='50' cy='50'/>
+                                    <circle class='inner-circle' r='35' cx='50' cy='50'/>
+                                </svg>  
+                                span.about-me__circle-text Node.js<br>& npm 
+                            li.about-me__circle-item 
+                                <svg class='about-me__circle-svg' viewBox ='0 0 100 100'>
+                                    <circle class='outer-circle' stroke-dasharray="3, 158" ; r='25' cx='50' cy='50'/>
+                                    <circle class='inner-circle' r='35' cx='50' cy='50'/>
+                                </svg>   
+                                span.about-me__circle-text Mongo.db
                     li.about-me__skills-item.about-me__skills-item--workflow
                         .about-me__title-skills WorkFlow
                         ul.about-me__circle-list
-                            li.about-me__circle-item Git
-                            li.about-me__circle-item Gulp
-                            li.about-me__circle-item Bower
+                            li.about-me__circle-item 
+                                <svg class='about-me__circle-svg' viewBox ='0 0 100 100'>
+                                    <circle class='outer-circle' stroke-dasharray="14, 158" ; r='25' cx='50' cy='50'/>
+                                    <circle class='inner-circle' r='35' cx='50' cy='50'/>
+                                </svg> 
+                                span.about-me__circle-text Git  
+                            li.about-me__circle-item 
+                                <svg class='about-me__circle-svg' viewBox ='0 0 100 100'>
+                                    <circle class='outer-circle' stroke-dasharray="60, 158" ; r='25' cx='50' cy='50'/>
+                                    <circle class='inner-circle' r='35' cx='50' cy='50'/>
+                                </svg>
+                                span.about-me__circle-text Gulp   
+                            li.about-me__circle-item 
+                                <svg class='about-me__circle-svg' viewBox ='0 0 100 100'>
+                                    <circle class='outer-circle' stroke-dasharray="30, 158" ; r='25' cx='50' cy='50'/>
+                                    <circle class='inner-circle' r='35' cx='50' cy='50'/>
+                                </svg> 
+                                span.about-me__circle-text Bower  
         section.contacts
             .map#map
             .contacts__wrapper

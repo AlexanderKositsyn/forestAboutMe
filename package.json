@@ -4,6 +4,7 @@
   "devDependencies": {
     "@babel/core": "^7.0.0-beta.34",
     "@babel/preset-env": "^7.0.0-beta.34",
+    "autoprefixer": "^7.2.3",
     "babel-cli": "^6.26.0",
     "babel-core": "^6.26.0",
     "babel-loader": "^8.0.0-beta.0",
@@ -44,6 +45,10 @@
     "node-sass": "^4.7.2",
     "node-static": "^0.7.10",
     "optimize-css-assets-webpack-plugin": "^3.2.0",
+    "postcss": "^6.0.14",
+    "postcss-cssnext": "^3.0.2",
+    "postcss-import": "^11.0.0",
+    "postcss-loader": "^2.0.9",
     "pug": "^2.0.0-rc.4",
     "pug-loader": "^2.3.0",
     "sass-loader": "^6.0.6",
@@ -58,7 +63,7 @@
     "wiredep": "^4.0.0"
   },
   "scripts": {
-    "start": "webpack-dev-server --env development",
+    "start": "webpack-dev-server --env development --open",
     "build": "webpack",
     "serv": "static dist"
   },
@@ -77,5 +82,6 @@
   "bugs": {
     "url": "https://github.com/AlexanderKositsyn/burger_club/issues"
   },
-  "homepage": "https://github.com/AlexanderKositsyn/burger_club#readme"
+  "homepage": "https://github.com/AlexanderKositsyn/burger_club#readme",
+  "browserslist": ["> 1%", "last 2 versions"]
 }

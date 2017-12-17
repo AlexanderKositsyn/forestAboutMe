@@ -48,7 +48,8 @@ body {
   }
 }
 
-body {
+.body--overflow-hidden {
+  overflow: hidden;
 }
 
 .wrapper {
