@@ -1,6 +1,5 @@
 header(class=`header ${header_modif}`)
-                svg(class="header__triangle"  width="100%" )
-                    use(xlink:href=require("../../icons/sprite/sprite.svg") +"#bg")
+                +svgTemp('header__triangle', 'bg')(preserveAspectRatio="none" height='150px')
                 .container.header__container
                     //- тут можно вставить svg для фона хедер
                     block headerSvg

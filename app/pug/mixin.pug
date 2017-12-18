@@ -4,7 +4,7 @@
 //- принимает svgId - строка с id в спрайте svg
 
 mixin svgTemp(className, svgId)
-    svg(class=`${className} ${className}--${svgId}` )
+    svg(class=`${className} ${className}--${svgId}`)&attributes(attributes)
         use(xlink:href=require("../../icons/sprite/sprite.svg")+ '#' + svgId)
 
 //- mixin для создания социалокс
@@ -19,8 +19,9 @@ mixin socialListMixin(elemClassName, values)
         each val in values
             li(class="social-list__item")   
                 a(class="social-list__link" href=val[1])
-                    svg(class=`social-list__icon social-list__icon--${val[0]}` )
+                    svg(class=`social-list__icon social-list__icon--${val[0]}`)
                         use(xlink:href=require("../../icons/sprite/sprite.svg")+ '#' + val[0])
+                        
 
 
 //- mixin для меню где есть переходы по страницам

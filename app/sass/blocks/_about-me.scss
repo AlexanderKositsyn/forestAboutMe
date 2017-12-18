@@ -36,14 +36,14 @@
   &__bg-right {
     fill: $white;
     position: absolute;
-    top: -154px;
+    top: -95px;
     right: 0;
     width: 50%;
-    height: 669.986px;
+    height: 267px;
     @include tablet {
       fill: $light-grey;
       height: 369px;
-      top: -94px;
+      top: -123px;
     }
     @include mobile {
       height: 200px;
@@ -52,13 +52,14 @@
   &__bg-left {
     fill: $light-grey;
     position: absolute;
-    top: -154px;
+    top: -95px;
     left: 0;
     width: 50%;
-    height: 669.986px;
+    height: 267px;
+
     @include tablet {
       height: 369px;
-      top: -94px;
+      top: -123px;
     }
     @include mobile {
       height: 200px;
@@ -99,15 +100,28 @@
     @include tablet {
       top: 50%;
     }
+    @include ie10plus {
+      height: 140px;
+    }
   }
   &__pic {
     width: 50%;
     margin-bottom: 40px;
+    overflow: hidden;
     @include tablet {
       margin-bottom: 18px;
+      @include ie10plus {
+        height: 170px;
+      }
     }
     @include mobile {
       width: 100%;
+    }
+    @include ie10plus {
+      height: 470px;
+    }
+    @include ie10plusTablet {
+      height: 170px;
     }
   }
   &__img {
@@ -237,5 +251,9 @@
   }
   @include tablet {
     flex-direction: column;
+  }
+
+  @include ie10plusTablet {
+    display: block;
   }
 }

@@ -16,7 +16,7 @@
     &--bottom {
       padding-left: 0;
       padding-right: 0;
-      max-width: initial;
+      max-width: none;
     }
     @include tablet {
       flex-wrap: wrap;
@@ -27,7 +27,7 @@
     padding-left: 30px;
     flex: 1 1;
     padding-right: 30px;
-    &:after {
+    &::after {
       content: "";
       width: 1px;
       height: 100%;
@@ -48,16 +48,23 @@
       &:after {
         display: block;
         width: 90%;
-        top: initial;
+        top: auto;
         bottom: -15px;
         right: 0;
         left: 5%;
         height: 2px;
       }
     }
+
+    @include ie10plusTablet {
+      flex: 1 1 auto;
+    }
   }
   &__column--left {
     padding-left: 0;
+    @include ie10plusTablet {
+      width: 50%;
+    }
   }
   &__about {
     line-height: 1.5;
@@ -74,6 +81,12 @@
         display: block;
       }
     }
+    @include ie10plusTablet {
+      width: 50%;
+    }
+    @include ie10plusMobile {
+      width: 100%;
+    }
   }
   &__pages-list {
     margin-bottom: 29px;
@@ -88,6 +101,9 @@
     @include tablet {
       padding-left: 0;
       margin-top: 10px;
+    }
+    @include ie10plusTablet {
+      width: 100%;
     }
   }
   &__quote {

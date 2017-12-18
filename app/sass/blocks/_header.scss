@@ -25,6 +25,8 @@
     left: 0;
     fill: $white;
     width: 100%;
+    @include ie10plus {
+    }
   }
 
   &__socials {

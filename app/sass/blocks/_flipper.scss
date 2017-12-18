@@ -20,6 +20,9 @@
     transform-style: preserve-3d;
 
     position: relative;
+    @include ie10plus {
+      transition: none;
+    }
   }
   &__welcome {
     backface-visibility: hidden;
@@ -41,6 +44,17 @@
     -moz-transform: rotateY(180deg);
     -o-transform: rotateY(180deg);
     transform: rotateY(180deg);
+    .flipper__welcome {
+      @include ie10plus {
+        display: none;
+      }
+    }
+    .flipper__authorization {
+      @include ie10plus {
+        display: block;
+        backface-visibility: visible;
+      }
+    }
   }
   @include tablet {
     width: 350px;

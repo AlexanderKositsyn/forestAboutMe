@@ -43,4 +43,7 @@
   @include mobile {
     flex-direction: column;
   }
+  @include ie10plusMobile {
+    display: block;
+  }
 }

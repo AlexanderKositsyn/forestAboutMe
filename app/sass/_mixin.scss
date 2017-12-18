@@ -59,9 +59,31 @@
   }
 }
 
+// миксин  для ie10+
+
+@mixin ie10plus {
+  @media screen and (-ms-high-contrast: active),
+    screen and (-ms-high-contrast: none) {
+    @content;
+  }
+}
+
+@mixin ie10plusTablet {
+  @media screen and (-ms-high-contrast: active) and (max-width: 768px),
+    screen and (-ms-high-contrast: none) and (max-width: 768px) {
+    @content;
+  }
+}
+
+@mixin ie10plusMobile {
+  @media screen and (-ms-high-contrast: active) and (max-width: 320px),
+    screen and (-ms-high-contrast: none) and (max-width: 320px) {
+    @content;
+  }
+}
+
 @mixin full-hd {
   @media (min-width: 1920px) {
-    @content;
   }
 }
 

@@ -17,11 +17,18 @@
     justify-content: center;
     align-items: center;
     @include tablet {
-      order: initial;
+      order: 0;
       width: 100%;
       padding: 5%;
     }
     @include mobile {
+    }
+
+    @include ie10plusTablet {
+      height: 465px;
+    }
+    @include ie10plusMobile {
+      height: 295px;
     }
   }
   &__slider-img {
@@ -40,7 +47,7 @@
     padding-top: 20px;
     padding-bottom: 20px;
     @include tablet {
-      order: initial;
+      order: 0;
       width: 100%;
       height: auto;
     }
@@ -53,9 +60,9 @@
     transform: translate(-50%, -50%);
     text-transform: uppercase;
     @include tablet {
-      position: initial;
+      position: static;
       text-align: center;
-      transform: initial;
+      transform: none;
       margin: 0 auto;
     }
     @include tablet {
@@ -70,7 +77,7 @@
     order: 3;
     display: flex;
     @include tablet {
-      order: initial;
+      order: 0;
       width: 100%;
       height: auto;
     }
