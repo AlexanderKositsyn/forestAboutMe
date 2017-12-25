@@ -1,3 +1,7 @@
+/*--images---*/
+import "../../img/water.jpg";
+import "../../img/water-maps.jpg";
+
 /*---styles---*/
 import "normalize.css";
 import "../../sass/base.scss";
@@ -7,6 +11,7 @@ import svg4everybody from "../../../node_modules/svg4everybody/dist/svg4everybod
 
 /*---js modules---*/
 import authorizationButtonInit from "../../js_modules/authorization-button";
+import water from "../../js_modules/water";
 
 authorizationButtonInit();
 

@@ -83,8 +83,5 @@
     "url": "https://github.com/AlexanderKositsyn/burger_club/issues"
   },
   "homepage": "https://github.com/AlexanderKositsyn/burger_club#readme",
-  "browserslist": [
-    "> 1%",
-    "last 2 versions"
-  ]
+  "browserslist": ["> 1%", "last 2 versions"]
 }

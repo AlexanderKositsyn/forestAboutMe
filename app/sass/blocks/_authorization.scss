@@ -131,7 +131,15 @@
     margin-right: 9px;
   }
   &__to-main {
+    @include ie10plus {
+      display: inline-block;
+      width: 50%;
+    }
   }
   &__submit {
+    @include ie10plus {
+      display: inline-block;
+      width: 50%;
+    }
   }
 }

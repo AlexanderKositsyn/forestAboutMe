@@ -15,7 +15,7 @@ const PATHS = {
 
 module.exports = {
   //функция которая возвращает следить или нет в зависимости от глобальной переменной NODE_ENV, которая устанавливается в scripts npm
-  watch: (function() {
+  watch: (function () {
     return process.env.NODE_ENV === "development";
   })(),
 
@@ -31,16 +31,13 @@ module.exports = {
     filename: "./js/[name].bundle.js"
   },
   module: {
-    rules: [
-      {
+    rules: [{
         test: /\.js$/,
         exclude: /(node_modules|bower_components)/,
-        use: {
-          loader: "babel-loader",
-          options: {
-            presets: ["@babel/preset-env"]
-          }
-        }
+
+        loader: "babel-loader"
+
+
       },
       {
         test: /\.pug$/,
@@ -53,14 +50,18 @@ module.exports = {
         test: /\.scss$/,
         use: ExtractTextPlugin.extract({
           publicPath: "../",
-          use: [
-            {
+          use: [{
               loader: "css-loader",
               options: {
                 sourceMap: true
               }
             },
-            { loader: "postcss-loader", options: { sourceMap: true } },
+            {
+              loader: "postcss-loader",
+              options: {
+                sourceMap: true
+              }
+            },
             {
               loader: "sass-loader",
               options: {
@@ -76,31 +77,32 @@ module.exports = {
           publicPath: "../",
           use: [
             "css-loader",
-            { loader: "postcss-loader", options: { sourceMap: true } }
+            {
+              loader: "postcss-loader",
+              options: {
+                sourceMap: true
+              }
+            }
           ]
         })
       },
       {
         test: /\.(png|jpg|gif|svg)$/,
-        use: [
-          {
-            loader: "file-loader",
-            options: {
-              name: "images/[name].[ext]"
-            }
+        use: [{
+          loader: "file-loader",
+          options: {
+            name: "images/[name].[ext]"
           }
-        ]
+        }]
       },
       {
         test: /\.(woff|woff2)$/,
-        use: [
-          {
-            loader: "file-loader",
-            options: {
-              name: "fonts/[name].[ext]"
-            }
+        use: [{
+          loader: "file-loader",
+          options: {
+            name: "fonts/[name].[ext]"
           }
-        ]
+        }]
       },
       {
         enforce: "pre",
