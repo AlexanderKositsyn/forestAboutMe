@@ -4,10 +4,22 @@
   display: flex;
   flex-direction: column;
   width: 380px;
-  background-color: rgba(#e0e1dd, 0.6);
+
   border-radius: 5px;
   padding-top: 32px;
   overflow: hidden;
+  position: relative;
+
+  &__blur {
+    background: url("../img/works_bg_footer.png") no-repeat;
+    background-position: left 0px bottom 0px;
+    filter: blur(12px);
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+  }
   &__title {
     font-size: 30px;
     &:after {
@@ -23,6 +35,7 @@
     }
   }
   &__name {
+    position: relative;
     width: 80%;
     border: none;
     border-radius: 30px;
@@ -33,6 +46,7 @@
   }
   &__email {
     width: 80%;
+    position: relative;
     border: none;
     border-radius: 30px;
     margin: 0 auto;
@@ -41,6 +55,7 @@
     outline: none;
   }
   &__comment {
+    position: relative;
     width: 80%;
     border: none;
     border-radius: 30px;
@@ -53,6 +68,7 @@
   }
   &__button-row {
     display: flex;
+    position: relative;
   }
   &__submit {
     flex: 1 1 50%;

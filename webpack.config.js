@@ -15,7 +15,7 @@ const PATHS = {
 
 module.exports = {
   //функция которая возвращает следить или нет в зависимости от глобальной переменной NODE_ENV, которая устанавливается в scripts npm
-  watch: (function () {
+  watch: (function() {
     return process.env.NODE_ENV === "development";
   })(),
 
@@ -23,7 +23,8 @@ module.exports = {
     index: "./app/pages/index/index.js",
     about: "./app/pages/about/about.js",
     blog: "./app/pages/blog/blog.js",
-    works: "./app/pages/works/works.js"
+    works: "./app/pages/works/works.js",
+    webgl: "./app/js_modules/water.js"
   },
   devtool: "source-map", // any "source-map"-like devtool is possible
   output: {
@@ -31,13 +32,12 @@ module.exports = {
     filename: "./js/[name].bundle.js"
   },
   module: {
-    rules: [{
+    rules: [
+      {
         test: /\.js$/,
         exclude: /(node_modules|bower_components)/,
 
         loader: "babel-loader"
-
-
       },
       {
         test: /\.pug$/,
@@ -50,7 +50,8 @@ module.exports = {
         test: /\.scss$/,
         use: ExtractTextPlugin.extract({
           publicPath: "../",
-          use: [{
+          use: [
+            {
               loader: "css-loader",
               options: {
                 sourceMap: true
@@ -88,21 +89,25 @@ module.exports = {
       },
       {
         test: /\.(png|jpg|gif|svg)$/,
-        use: [{
-          loader: "file-loader",
-          options: {
-            name: "images/[name].[ext]"
+        use: [
+          {
+            loader: "file-loader",
+            options: {
+              name: "images/[name].[ext]"
+            }
           }
-        }]
+        ]
       },
       {
         test: /\.(woff|woff2)$/,
-        use: [{
-          loader: "file-loader",
-          options: {
-            name: "fonts/[name].[ext]"
+        use: [
+          {
+            loader: "file-loader",
+            options: {
+              name: "fonts/[name].[ext]"
+            }
           }
-        }]
+        ]
       },
       {
         enforce: "pre",
@@ -120,7 +125,7 @@ module.exports = {
     new HtmlWebpackPlugin({
       filename: "index.html",
       // указываем подключаемый budle
-      chunks: ["index", "common"],
+      chunks: ["index", "common", "webgl"],
       template: "./app/pug/pages/index.pug"
     }),
     new HtmlWebpackPlugin({
