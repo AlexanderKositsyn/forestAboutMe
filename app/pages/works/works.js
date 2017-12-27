@@ -10,6 +10,7 @@ svg4everybody();
 /*---js modules---*/
 import initHamburger from "../../js_modules/hamburger";
 import initBlur from "../../js_modules/blur";
+import "../../js_modules/animateScroll";
 
 initHamburger();
 

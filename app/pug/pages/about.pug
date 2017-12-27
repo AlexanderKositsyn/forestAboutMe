@@ -127,9 +127,10 @@ block main
                     //цикл для генерирования списка контактов
                     each val in icons
                         li.contacts__item
-                            svg.contacts__svg
-                                use(xlink:href=require('../../icons/sprite/sprite.svg')+"#"+`${val[0]}`)
-                            | #{val[1]}
+                            a(href='#').contacts__link
+                                svg.contacts__svg
+                                    use(xlink:href=require('../../icons/sprite/sprite.svg')+"#"+`${val[0]}`)
+                                | #{val[1]}
 
     
                         

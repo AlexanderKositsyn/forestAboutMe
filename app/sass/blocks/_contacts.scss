@@ -37,6 +37,11 @@
       margin-bottom: 0;
     }
   }
+  &__link {
+    display: block;
+    text-decoration: none;
+    color: $text-primary;
+  }
   &__svg {
     width: 24px;
     height: 24px;

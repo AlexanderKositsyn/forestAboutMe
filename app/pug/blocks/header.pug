@@ -20,3 +20,4 @@ header(class=`header ${header_modif}`)
                             span
                     +pagesListMixin('header__pages-list',[['Мои работы','./works.html'],['Обо мне','./about.html'],['Блог','./blog.html'],['Авторизация','/']], pagesListActiveItem)
                     a(href='#' class="bottom-arrow" data-scroll-to="1")
+                        +svgTemp('bottom-arrow__svg', 'arrow_down') 

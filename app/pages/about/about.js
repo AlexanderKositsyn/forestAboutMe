@@ -9,5 +9,6 @@ svg4everybody();
 /*---js modules---*/
 import initMap from "../../js_modules/map";
 import initHamburger from "../../js_modules/hamburger";
+import "../../js_modules/animateScroll";
 initHamburger();
 initMap();
