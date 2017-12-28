@@ -1,5 +1,10 @@
 // функция скролла
-function scrollIt(destination, duration = 200, easing = "linear", callback) {
+export default function scrollIt(
+  destination,
+  duration = 200,
+  easing = "linear",
+  callback
+) {
   const easings = {
     linear(t) {
       return t;
@@ -83,6 +88,10 @@ function scrollIt(destination, duration = 200, easing = "linear", callback) {
       0,
       Math.ceil(timeFunction * (destinationOffsetToScroll - start) + start)
     );
+    //усоловие если время истекло, то поставь в конечную точку анимации
+    if (duration <= now - startTime) {
+      return;
+    }
     // это условие проверяет условие кончилась ли аницация. в данном случае проверяет дошли ли до точки назначения
     if (window.pageYOffset === destinationOffsetToScroll) {
       if (callback) {
@@ -96,8 +105,3 @@ function scrollIt(destination, duration = 200, easing = "linear", callback) {
 
   scroll();
 }
-
-// устанавливаем обработчик для стрелки
-document.querySelector(".bottom-arrow").addEventListener("click", () => {
-  scrollIt(document.querySelector(".main"), 500, "easeOutQuad");
-});

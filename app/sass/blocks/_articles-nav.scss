@@ -22,6 +22,17 @@
   }
   &__list {
     width: 70%;
+    &--fixed {
+      position: fixed;
+      left: 3.3%;
+      top: 100px;
+      width: 18.6%;
+      @include tablet {
+        position: static;
+        left: auto;
+        top: auto;
+      }
+    }
     @include tablet {
       width: 90%;
     }
