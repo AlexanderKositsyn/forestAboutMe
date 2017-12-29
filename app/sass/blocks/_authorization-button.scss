@@ -17,11 +17,15 @@
     background-color: $fern-green;
   }
   &--hidden {
-    display: none;
+    visibility: hidden;
   }
 
   @include mobile {
-    right: 50%;
-    transform: translateX(50%);
+    position: relative;
+    align-self: center;
+    transform: none;
+    right: auto;
+    top: auto;
+    margin-bottom: 10px;
   }
 }
