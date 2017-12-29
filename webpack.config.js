@@ -26,7 +26,7 @@ module.exports = {
     works: "./app/pages/works/works.js",
     webgl: "./app/js_modules/water.js"
   },
-  devtool: "source-map", // any "source-map"-like devtool is possible
+  devtool: "inline-source-map", // any "source-map"-like devtool is possible
   output: {
     path: PATHS.dist,
     filename: "./js/[name].bundle.js"
@@ -152,7 +152,7 @@ module.exports = {
     // }),
     new StyleLintPlugin({
       configFile: "./.stylelintrc"
-    }),
-    new UglifyJsPlugin()
+    })
+    // new UglifyJsPlugin()
   ]
 };

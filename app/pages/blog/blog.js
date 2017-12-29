@@ -9,11 +9,9 @@ svg4everybody();
 
 /*---js modules---*/
 import initHamburger from "../../js_modules/hamburger";
-import scrollIt from "../../js_modules/animateScroll";
-import scrollMenu from "../../js_modules/scrollMenu";
+import scrollIt from "../../js_modules/animation/scrollIt";
 
-// фуникция принимает функцию анимации скролла
-scrollMenu(scrollIt);
+import "../../js_modules/blogMenu";
 
 // устанавливаем обработчик для стрелки
 document.querySelector(".bottom-arrow").addEventListener("click", () => {

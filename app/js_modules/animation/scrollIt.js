@@ -47,6 +47,13 @@ export default function scrollIt(
     }
   };
 
+  // Определение координаты элемента по вертикали от начала документа
+  function pageY(elem) {
+    return elem.offsetParent
+      ? elem.offsetTop + pageY(elem.offsetParent)
+      : elem.offsetTop;
+  }
+
   const start = window.pageYOffset;
   const startTime =
     "now" in window.performance ? performance.now() : new Date().getTime();
@@ -63,7 +70,7 @@ export default function scrollIt(
     document.documentElement.clientHeight ||
     document.getElementsByTagName("body")[0].clientHeight;
   const destinationOffset =
-    typeof destination === "number" ? destination : destination.offsetTop;
+    typeof destination === "number" ? destination : pageY(destination);
   const destinationOffsetToScroll = Math.round(
     documentHeight - destinationOffset < windowHeight
       ? documentHeight - windowHeight

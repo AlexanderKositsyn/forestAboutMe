@@ -16,16 +16,14 @@ block main
                 - 
                     var 
                     articles_themes = [
+                        'Самое важное в SASS',
                         'Приёмы в вёрстке, без которых не обходится ни один сайт',
                         'Самый необходимый набор Gulp плагинов',
                         'Почему я выбрал Jade'
                         ];
-                ul(class="articles-nav__list articles-nav__list--swipe-on")
-                    //ПОтом пересмотреть и может как то исправить 
-                    li(class="articles-nav__item").
-                        Самое важное в SASS
-                    each theme in articles_themes
-                        li(class="articles-nav__item")= theme
+                ul(class="articles-nav__list articles-nav__list--swipe-on")    
+                    each theme,index in articles_themes
+                        li(class="articles-nav__item" data-scroll-to=index)= theme
                             
                             
                         

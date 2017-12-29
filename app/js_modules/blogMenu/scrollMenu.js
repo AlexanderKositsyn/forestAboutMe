@@ -31,8 +31,6 @@ export default function(scrollIt) {
       var currArticle = item;
       var menuLinks = document.querySelectorAll(".articles-nav__item");
 
-      console.log(item + " " + pageY(currArticle));
-      console.log(scrollPos);
       if (
         pageY(currArticle) <= scrollPos &&
         pageY(currArticle) + currArticle.offsetHeight > scrollPos

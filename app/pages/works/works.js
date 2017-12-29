@@ -10,7 +10,7 @@ svg4everybody();
 /*---js modules---*/
 import initHamburger from "../../js_modules/hamburger";
 import initBlur from "../../js_modules/blur";
-import scrollIt from "../../js_modules/animateScroll";
+import scrollIt from "../../js_modules/animation/scrollIt";
 
 // устанавливаем обработчик для стрелки
 document.querySelector(".bottom-arrow").addEventListener("click", () => {
