@@ -10,10 +10,17 @@ svg4everybody();
 import initMap from "../../js_modules/map";
 import initHamburger from "../../js_modules/hamburger";
 import scrollIt from "../../js_modules/animation/scrollIt";
-
+import preloader from "../../js_modules/preloader";
 // устанавливаем обработчик для стрелки
-document.querySelector(".bottom-arrow").addEventListener("click", () => {
-  scrollIt(document.querySelector(".main"), 500, "easeOutQuad");
+
+// запускаем скрипты только тогда, когда весь ДОМ уже готов к работе
+document.addEventListener("DOMContentLoaded", function(event) {
+  preloader(["images/water.jpg"]);
+  console.log("dom ready");
+
+  document.querySelector(".bottom-arrow").addEventListener("click", () => {
+    scrollIt(document.querySelector(".main"), 500, "easeOutQuad");
+  });
+  initHamburger();
+  initMap();
 });
-initHamburger();
-initMap();

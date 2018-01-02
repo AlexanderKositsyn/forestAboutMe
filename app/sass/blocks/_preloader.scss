@@ -1,0 +1,45 @@
+.preloader {
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  top: 0;
+  background: url("../img/forest_prel_bg.jpg") center center / cover no-repeat;
+  &__wrapper {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+  }
+  &__text {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+    font-size: 24px;
+    color: $white;
+  }
+  &__svg {
+    stroke: $white;
+    width: 80px;
+    height: 90px;
+  }
+  &__svg-path {
+    stroke-dasharray: 100;
+
+    &--first {
+      animation: dash 2s cubic-bezier(0.35, 0.94, 0.72, 0.21) infinite;
+    }
+    &--second {
+      animation: dash 1.6s cubic-bezier(0.16, 0.62, 0.79, 0.23) infinite;
+    }
+    &--third {
+      animation: dash 1.4s cubic-bezier(0.04, 0.45, 0.86, 0.29) infinite;
+    }
+  }
+
+  &--hidden {
+    display: none;
+  }
+}

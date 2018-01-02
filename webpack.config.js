@@ -7,6 +7,7 @@ const webpack = require("webpack");
 const OptimizeCssAssetsPlugin = require("optimize-css-assets-webpack-plugin");
 const StyleLintPlugin = require("stylelint-webpack-plugin");
 const UglifyJsPlugin = require("uglifyjs-webpack-plugin");
+const ScriptExtHtmlWebpackPlugin = require("script-ext-html-webpack-plugin");
 
 const PATHS = {
   source: path.join(__dirname, "source"),
@@ -126,27 +127,35 @@ module.exports = {
       filename: "index.html",
       // указываем подключаемый budle
       chunks: ["index", "common", "webgl"],
+      inject: "head",
       template: "./app/pug/pages/index.pug"
     }),
     new HtmlWebpackPlugin({
       filename: "about.html",
       chunks: ["about", "common"],
+      inject: "head",
       template: "./app/pug/pages/about.pug"
     }),
     new HtmlWebpackPlugin({
       filename: "blog.html",
       chunks: ["blog", "common"],
+      inject: "head",
       template: "./app/pug/pages/blog.pug"
     }),
     new HtmlWebpackPlugin({
       filename: "works.html",
       chunks: ["works", "common"],
+      inject: "head",
       template: "./app/pug/pages/works.pug"
     }),
     new ExtractTextPlugin("./css/[name].css"),
+    new ScriptExtHtmlWebpackPlugin({
+      defer: "webgl"
+    }),
     new webpack.optimize.CommonsChunkPlugin({
       name: "common"
     }),
+
     // new OptimizeCssAssetsPlugin({
     //   cssProcessorOptions: { discardComments: { removeAll: true } }
     // }),

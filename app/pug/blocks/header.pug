@@ -17,7 +17,9 @@ header(class=`header ${header_modif}`)
                                     Статьи, которые я написал
                     div(class="header__hamburger-menu")
                         a(href="#" class="hamburger")
-                            span
+                            <span class="hamburger__line"></span>
+                            <span class="hamburger__line"></span>
+                            <span class="hamburger__line"></span>
                     +pagesListMixin('header__pages-list',[['Мои работы','./works.html'],['Обо мне','./about.html'],['Блог','./blog.html'],['Авторизация','/']], pagesListActiveItem)
                     a(href='#' class="bottom-arrow" data-scroll-to="1")
                         +svgTemp('bottom-arrow__svg', 'arrow_down') 

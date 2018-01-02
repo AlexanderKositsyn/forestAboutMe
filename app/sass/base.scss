@@ -2,6 +2,7 @@
 @import "_mixin";
 @import "global/_global-fonts";
 @import "global/_global-scaffolding.scss";
+@import "_animation.scss";
 @import "blocks/_person-card.scss";
 @import "blocks/_header.scss";
 @import "blocks/_button.scss";
@@ -28,3 +29,4 @@
 @import "blocks/_authorization.scss";
 @import "blocks/_flipper.scss";
 @import "blocks/_webgl.scss";
+@import "blocks/_preloader.scss";

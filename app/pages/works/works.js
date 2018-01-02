@@ -11,14 +11,20 @@ svg4everybody();
 import initHamburger from "../../js_modules/hamburger";
 import initBlur from "../../js_modules/blur";
 import scrollIt from "../../js_modules/animation/scrollIt";
+import preloader from "../../js_modules/preloader";
 
-// устанавливаем обработчик для стрелки
-document.querySelector(".bottom-arrow").addEventListener("click", () => {
-  scrollIt(document.querySelector(".main"), 500, "easeOutQuad");
+// запускаем скрипты только тогда, когда весь ДОМ уже готов к работе
+document.addEventListener("DOMContentLoaded", function(event) {
+  preloader(["images/water.jpg"]);
+
+  // устанавливаем обработчик для стрелки
+  document.querySelector(".bottom-arrow").addEventListener("click", () => {
+    scrollIt(document.querySelector(".main"), 500, "easeOutQuad");
+  });
+
+  initHamburger();
+
+  window.onload = () => {
+    initBlur();
+  };
 });
-
-initHamburger();
-
-window.onload = () => {
-  initBlur();
-};
