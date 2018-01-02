@@ -11,6 +11,7 @@ import initMap from "../../js_modules/map";
 import initHamburger from "../../js_modules/hamburger";
 import scrollIt from "../../js_modules/animation/scrollIt";
 import preloader from "../../js_modules/preloader";
+
 // устанавливаем обработчик для стрелки
 
 // запускаем скрипты только тогда, когда весь ДОМ уже готов к работе

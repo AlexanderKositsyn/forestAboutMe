@@ -26,3 +26,21 @@
     stroke-dashoffset: 0;
   }
 }
+
+@keyframes leftHamburgerMenuAnimate {
+  from {
+    left: -50%;
+  }
+  to {
+    left: 0;
+  }
+}
+
+@keyframes rightHamburgerMenuAnimate {
+  from {
+    right: -50%;
+  }
+  to {
+    right: 0;
+  }
+}

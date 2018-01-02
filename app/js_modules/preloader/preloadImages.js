@@ -13,7 +13,7 @@ export default function preloadImages(implicitImages, arrayUrl, imageHandler) {
   // // ставим обработчки на  элементы  которые bg общего массива картинок
   allImagesOnPage = implicitImages.concat(bgImageArray);
   allImagesOnPage.forEach(function(item) {
-    console.log(item);
+    // console.log(item);
     item.addEventListener("load", imageHandler);
   });
   // ставим src для картинок которые бэкграунд (src берем из массва который был передан как аргумент )

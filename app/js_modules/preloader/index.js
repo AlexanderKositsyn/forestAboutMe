@@ -20,7 +20,7 @@ export default function(urlBgImages = []) {
   // функция колбек на загрузку одной из картинок, когда картинка (одна) загрузится эта функция вополнится
   function procentCount() {
     imagesLoaded++;
-    console.log(imagesLoaded);
+
     //запомним старое состояние percent
     oldPercent = percent;
     // и найдем новое значение precent
@@ -42,12 +42,10 @@ export default function(urlBgImages = []) {
 
   // убираем прелоадер когда страница загрузилась
   window.addEventListener("load", function() {
-    wrapper.classList.add("wrapper--loaded");
-    preloader.classList.add("preloader--hidden");
+    // если прошло 10 сек то снимаем прелодаер
+    setTimeout(function() {
+      wrapper.classList.add("wrapper--loaded");
+      preloader.classList.add("preloader--hidden");
+    }, 3000);
   });
-  // если прошло 10 сек то снимаем прелодаер
-  setTimeout(function() {
-    wrapper.classList.add("wrapper--loaded");
-    preloader.classList.add("preloader--hidden");
-  }, 10000);
 }

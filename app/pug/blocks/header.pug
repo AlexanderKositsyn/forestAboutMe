@@ -15,11 +15,14 @@ header(class=`header ${header_modif}`)
                                     +svgTemp("person-card__svg-blog", 'blog_header')
                                 .person-card__text-amplua.
                                     Статьи, которые я написал
+                    .header__pages-wrapper
+                            .header__pages-left
+                            .header__pages-right
+                            +pagesListMixin('header__pages-list',[['Мои работы','./works.html'],['Обо мне','./about.html'],['Блог','./blog.html'],['Авторизация','/']], pagesListActiveItem)
                     div(class="header__hamburger-menu")
                         a(href="#" class="hamburger")
                             <span class="hamburger__line"></span>
                             <span class="hamburger__line"></span>
                             <span class="hamburger__line"></span>
-                    +pagesListMixin('header__pages-list',[['Мои работы','./works.html'],['Обо мне','./about.html'],['Блог','./blog.html'],['Авторизация','/']], pagesListActiveItem)
                     a(href='#' class="bottom-arrow" data-scroll-to="1")
                         +svgTemp('bottom-arrow__svg', 'arrow_down') 
