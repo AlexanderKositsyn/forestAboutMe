@@ -15,8 +15,8 @@ export default function(scrollIt) {
     var scrollPos = window.pageYOffset || document.documentElement.scrollTop;
 
     // если прокрутка дошла до меню, то делаем  меню фиксорованным
-    let articlesNav = document.querySelector(".articles-nav__list");
-    let asideMenu = document.querySelector(".articles-nav");
+    let articlesNav = document.querySelector(".articles-nav__list"),
+      asideMenu = document.querySelector(".articles-nav");
     if (pageY(asideMenu) - 100 <= scrollPos) {
       articlesNav.classList.add("articles-nav__list--fixed");
     } else {

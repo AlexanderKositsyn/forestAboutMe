@@ -21,6 +21,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
   document.querySelector(".bottom-arrow").addEventListener("click", () => {
     scrollIt(document.querySelector(".main"), 500, "easeOutQuad");
   });
+
   initHamburger();
   initBlog();
 });

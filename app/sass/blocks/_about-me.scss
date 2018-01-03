@@ -242,15 +242,16 @@
     border-radius: 50%;
 
     transform: rotate(-90deg);
-    .outer-circle {
-      //цвет линии веншней
-      stroke: $moss;
-      stroke-width: 50px;
-    }
-    .inner-circle {
-      //цвет внутреннего кружка
-      fill: $white;
-    }
+  }
+  &__outer-circle {
+    //цвет линии веншней
+    stroke: $moss;
+    stroke-width: 50px;
+    stroke-dasharray: 10, 158;
+  }
+  &__inner-circle {
+    //цвет внутреннего кружка
+    fill: $white;
   }
   @include tablet {
     flex-direction: column;

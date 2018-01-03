@@ -21,6 +21,10 @@
 
     position: relative;
 
+    &--zoomTop {
+      animation: zoomInLeft 1s;
+    }
+
     @include ie10plus {
       transition: none;
     }

@@ -40,12 +40,21 @@ export default function(urlBgImages = []) {
   // она их собререт и поставит обработчкики на картинки
   preloadImages(implicitImages, urlBgImages, procentCount);
 
-  // убираем прелоадер когда страница загрузилась
-  window.addEventListener("load", function() {
-    // если прошло 10 сек то снимаем прелодаер
-    setTimeout(function() {
-      wrapper.classList.add("wrapper--loaded");
-      preloader.classList.add("preloader--hidden");
-    }, 3000);
-  });
+  // // убираем прелоадер когда страница загрузилась
+  // window.addEventListener("load", function() {
+  //////////////////////////////
+
+  // если прошло 3 сек то снимаем прелодаер
+  setTimeout(function() {
+    wrapper.classList.add("wrapper--loaded");
+    preloader.classList.add("preloader--hidden");
+    // анимация для плашки страницы index
+    let flipper = document.querySelector(".flipper__wrapper");
+    if (flipper) {
+      flipper.classList.add("flipper__wrapper--zoomTop");
+    }
+  }, 3000);
+
+  ////////////////////////
+  // });
 }

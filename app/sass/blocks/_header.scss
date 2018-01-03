@@ -5,6 +5,7 @@
   padding-bottom: 50px;
   flex: 0 0 auto;
   height: 100vh;
+  min-height: 650px;
   &__container {
     position: relative;
     height: 100%;
@@ -50,7 +51,7 @@
   }
   &__hamburger-menu {
     position: absolute;
-    top: -73px;
+    top: -64px;
     right: 3%;
     @include mobile {
       top: -93px;
@@ -100,6 +101,7 @@
       margin-bottom: 40px;
       &--active {
         &:after {
+          animation: widthLineAnimate 0.5s;
           content: "";
           height: 4px;
           width: 100px;
