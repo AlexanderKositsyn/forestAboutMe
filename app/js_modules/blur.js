@@ -1,15 +1,9 @@
+import pageY from "./helpFunctions/pageY";
 export default function initBlur() {
   let set = () => {
-    let bgOuter = document.querySelector(".wrapper--works");
-    let bgInner = document.querySelector(".callback-form__blur");
-    let bgInnerStyles = bgInner.style;
-
-    // Определение координаты элемента по вертикали от начала документа
-    function pageY(elem) {
-      return elem.offsetParent
-        ? elem.offsetTop + pageY(elem.offsetParent)
-        : elem.offsetTop;
-    }
+    let bgOuter = document.querySelector(".wrapper--works"),
+      bgInner = document.querySelector(".callback-form__blur"),
+      bgInnerStyles = bgInner.style;
 
     // определение высоты всего документа
     let body = document.body,

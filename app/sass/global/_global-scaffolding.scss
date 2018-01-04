@@ -53,7 +53,7 @@ body {
 }
 
 .wrapper {
-  display: none;
+  visibility: hidden;
   flex-direction: column;
   min-height: 100%;
   overflow-x: hidden;
@@ -79,6 +79,7 @@ body {
   }
 
   &--loaded {
+    visibility: visible;
     display: flex;
     opacity: 1;
   }

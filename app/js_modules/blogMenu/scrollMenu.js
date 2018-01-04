@@ -1,13 +1,8 @@
+import pageY from "../helpFunctions/pageY";
+
 export default function(scrollIt) {
   // добавляем обработчик на скрол
   document.addEventListener("scroll", onScroll);
-
-  // Определение координаты элемента по вертикали от начала документа
-  function pageY(elem) {
-    return elem.offsetParent
-      ? elem.offsetTop + pageY(elem.offsetParent)
-      : elem.offsetTop;
-  }
 
   // фукнция которая каждый раз проверяет где находится скролл
   function onScroll(event) {

@@ -155,6 +155,9 @@ module.exports = {
     new webpack.optimize.CommonsChunkPlugin({
       name: "common"
     }),
+    new webpack.ProvidePlugin({
+      identifier: "./app/js_modules/map.js"
+    }),
 
     // new OptimizeCssAssetsPlugin({
     //   cssProcessorOptions: { discardComments: { removeAll: true } }
