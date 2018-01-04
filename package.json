@@ -77,7 +77,8 @@
   "license": "MIT",
   "dependencies": {
     "normalize.css": "^7.0.0",
-    "svg4everybody": "^2.1.9"
+    "svg4everybody": "^2.1.9",
+    "vue": "^2.5.13"
   },
   "description": "Use steps below to setup this project:",
   "bugs": {

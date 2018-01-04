@@ -11,7 +11,6 @@ svg4everybody();
 import preloader from "../../js_modules/preloader";
 import initHamburger from "../../js_modules/hamburger";
 import scrollIt from "../../js_modules/animation/scrollIt";
-
 import initBlog from "../../js_modules/blogMenu";
 
 // запускаем скрипты только тогда, когда весь ДОМ уже готов к работе
