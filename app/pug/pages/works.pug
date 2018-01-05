@@ -27,25 +27,7 @@ block main
         .container.main__container.main__container--works
             h1.title.title--underlined.title--works Мои работы
                 +svgTemp("title__svg-works", 'works_header')
-            section.my-works
-                .my-works__slider
-                    img(src=require('../../img/site1.png')).my-works__slider-img
-                .my-works__decription 
-                    .my-works__decription-wrapper
-                        .my-works__site-name.
-                            Сайт школы онлайн <br> Образования
-                        .my-works__site-technogies HTML , CSS, JAVASCRIPT
-                        a(href='#').my-works__site-link
-                            svg.my-works__svg-link
-                                use(xlink:href=require("../../icons/sprite/sprite.svg")+"#link")
-                            | Посмотреть сайт   
-                .my-works__slider-buttons
-                    a(href='#').my-works__button-left
-                        img(src=require('../../img/site2.png')).my-works__img
-                        +svgTemp('my-works__arrow-down','portf_arrow_down')
-                    a(href='#').my-works__button-right
-                        img(src=require('../../img/site3.png')).my-works__img
-                        +svgTemp('my-works__arrow-up','portf_arrow_up')
+            slider
             h1.title.title--underlined Что обо мне <br>говорят
             ul.feeds-list
                 li.feeds-list__item

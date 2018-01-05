@@ -5,8 +5,10 @@ import "../../sass/base.scss";
 /*---js---*/
 import svg4everybody from "../../../node_modules/svg4everybody/dist/svg4everybody";
 import Vue from "vue";
-
 svg4everybody();
+
+/*---vue components---*/
+import Slider from "../../vue/slider/slider.vue";
 
 /*---js modules---*/
 import initHamburger from "../../js_modules/hamburger";
@@ -31,4 +33,10 @@ document.addEventListener("DOMContentLoaded", function(event) {
   window.onload = () => {
     initBlur();
   };
+
+  //вызываем модуль vue для слайдера
+  window.vm = new Vue({
+    el: "slider",
+    render: h => h(Slider)
+  });
 });

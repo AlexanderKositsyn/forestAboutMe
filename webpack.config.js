@@ -101,7 +101,8 @@ module.exports = {
               "vue-style-loader",
               "css-loader",
               "sass-loader?indentedSyntax"
-            ]
+            ],
+            svg: "vue-svg-loader"
           }
           // other vue-loader options go here
         }
