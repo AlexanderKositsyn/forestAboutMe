@@ -9,7 +9,7 @@ mixin svgTemp(className, svgId)
         .my-works__slider-wrapper
             ul.my-works__slider-list
                 li.my-works__slider-item(v-for="item in sliderData")
-                    img(:src='item.imgSrc').my-works__slider-img
+                    img( :src="getImgUrl(item.imgSrc)").my-works__slider-img
     .my-works__decription
         .my-works__decription-wrapper
             .my-works__site-name.
@@ -24,12 +24,12 @@ mixin svgTemp(className, svgId)
         a(href='#' @click.prevent='previousButtonClicked').my-works__button-previous
             ul.my-works__previous-list(:style="{ bottom: sliderPrevious }") 
                 li.my-works__previous-item(v-for="item in sliderData")
-                    img(:src='item.imgSrc').my-works__previous-img
+                    img(:src="getImgUrl(item.imgSrc)").my-works__previous-img
             +svgTemp('my-works__arrow-down','portf_arrow_down')
         a(href='#' @click.prevent='nextButtonClicked').my-works__button-next
             ul.my-works__next-list(:style="{ top: sliderNext }") 
                 li.my-works__next-item(v-for="item in sliderData")
-                    img(:src='item.imgSrc').my-works__next-img
+                    img(:src="getImgUrl(item.imgSrc)").my-works__next-img
             +svgTemp('my-works__arrow-up','portf_arrow_up')
 </template>
 
@@ -74,6 +74,9 @@ export default {
         ? (this.currentItem = 0)
         : ++this.currentItem;
       nextSlideTopSlider(this.currentItem);
+    },
+    getImgUrl(path) {
+      return require("../../img/" + path);
     }
   },
   computed: {
@@ -97,7 +100,14 @@ export default {
     }
   },
   mounted: function() {
+    // console.log();
     nextSlideTopSlider(this.currentItem);
+  },
+  updated: function() {
+    let siteName = this.$el.querySelector(".my-works__site-name"),
+      siteTechnogies = this.$el.querySelector(".my-works__site-technogies");
+    textShowAnimation(siteName, 0);
+    textShowAnimation(siteTechnogies, 0);
   }
 };
 </script>
