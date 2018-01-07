@@ -12,10 +12,8 @@ mixin svgTemp(className, svgId)
                     img( :src="getImgUrl(item.imgSrc)").my-works__slider-img
     .my-works__decription
         .my-works__decription-wrapper
-            .my-works__site-name.
-                {{sliderData[descriptionNumber].siteName}}
-            .my-works__site-technogies.
-                {{sliderData[descriptionNumber].siteTechnogies}}
+            .my-works__site-name {{slideName}}
+            .my-works__site-technogies {{slideTechnogies}}
             a(href='#').my-works__site-link
                 svg.my-works__svg-link
                     use(xlink:href="./images/sprite.svg#link")
@@ -80,6 +78,13 @@ export default {
     }
   },
   computed: {
+    slideName() {
+      return this.sliderData[this.descriptionNumber].siteName;
+    },
+    slideTechnogies() {
+      console.log(this.sliderData[this.descriptionNumber].siteTechnogies);
+      return this.sliderData[this.descriptionNumber].siteTechnogies;
+    },
     descriptionNumber() {
       return this.currentItem;
       //   console.log("descriptionNumber" + this.currentItem);
@@ -104,8 +109,11 @@ export default {
     nextSlideTopSlider(this.currentItem);
   },
   updated: function() {
-    let siteName = this.$el.querySelector(".my-works__site-name"),
-      siteTechnogies = this.$el.querySelector(".my-works__site-technogies");
+    console.log(this.descriptionNumber);
+    let siteName, siteTechnogies;
+    siteName = this.$el.querySelector(".my-works__site-name");
+    siteTechnogies = this.$el.querySelector(".my-works__site-technogies");
+    console.log(siteTechnogies);
     textShowAnimation(siteName, 0);
     textShowAnimation(siteTechnogies, 0);
   }
