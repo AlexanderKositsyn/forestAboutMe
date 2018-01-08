@@ -1,8 +1,11 @@
 <template lang="pug">
 .admin-tabs
-    a.admin-tabs__link(
-        v-for='tab in tabs'
-    ) {{tab}}
+  //- router-link.admin-tabs__link(to="/blog" v-for='tab in tabs').
+  //-   {{tab}}
+  router-link.admin-tabs__link(to="/").
+    {{tabs[0]}}
+  router-link.admin-tabs__link(to="/blog").
+    {{tabs[1]}}
     
     
 </template>

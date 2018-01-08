@@ -1,0 +1,55 @@
+.blog-content {
+  flex: 1 1 auto;
+  padding-top: 40px;
+  background: linear-gradient(
+      rgba(255, 255, 255, 0.8),
+      rgba(255, 255, 255, 0.8)
+    ),
+    url("../../img/water.jpg") center center / cover no-repeat;
+  &__title {
+    font-size: 21px;
+    font-family: "robotoregular";
+    margin-bottom: 50px;
+  }
+  &__title-form {
+    font-family: "robotoregular";
+    margin-bottom: 20px;
+  }
+  &__input {
+    width: 20%;
+    display: block;
+    margin-bottom: 20px;
+    padding: 10px;
+    border: none;
+    border-radius: 10px;
+    &--text {
+      width: 40%;
+      min-height: 200px;
+      resize: none;
+    }
+  }
+
+  &__save {
+    display: inline-block;
+    padding: 13px 20px 13px 19px;
+    border: none;
+    border-radius: 5px;
+    background-color: $moss;
+    color: $white;
+    font-family: "robotoregular";
+    width: 120px;
+  }
+}
+
+.container {
+  max-width: 1800px;
+  margin: 0 auto;
+  padding-left: 38px;
+  padding-right: 38px;
+  display: flex;
+  flex-direction: column;
+  @include tablet {
+    padding-left: 8px;
+    padding-right: 8px;
+  }
+}

@@ -2,12 +2,11 @@
   #admin.admin
       admin-header
       admin-tabs
-      admin-content
+      router-view
       
 </template>
 
 <script>
-import adminContent from "./components/aboutContent.vue";
 import adminHeader from "./components/adminHeader.vue";
 import adminTabs from "./components/adminTabs.vue";
 
@@ -16,7 +15,6 @@ export default {
     return {};
   },
   components: {
-    "admin-content": adminContent,
     "admin-header": adminHeader,
     "admin-tabs": adminTabs
   }

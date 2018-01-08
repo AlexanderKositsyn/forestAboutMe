@@ -61,7 +61,6 @@
     "vue-loader": "^13.6.2",
     "vue-svg-loader": "^0.4.0",
     "vue-template-compiler": "^2.5.13",
-    "vuex": "^3.0.1",
     "webpack": "^3.10.0",
     "webpack-dev-server": "^2.9.7",
     "webpack-merge": "^4.1.1",
@@ -83,7 +82,9 @@
   "dependencies": {
     "normalize.css": "^7.0.0",
     "svg4everybody": "^2.1.9",
-    "vue": "^2.5.13"
+    "vue": "^2.5.13",
+    "vue-router": "^3.0.1",
+    "vuex": "^3.0.1"
   },
   "description": "Use steps below to setup this project:",
   "bugs": {

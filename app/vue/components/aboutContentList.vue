@@ -4,6 +4,7 @@
         v-for='(typeSkill, skillKey) in typeSkills'
         :skillKey = 'skillKey'
         :typeSkill = 'typeSkill'
+        :key='typeSkill'
       )
     
     

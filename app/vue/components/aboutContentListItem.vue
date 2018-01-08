@@ -22,7 +22,6 @@ export default {
   computed: {
     filteredSkills() {
       let skills = this.$store.state.skills;
-      debugger;
       switch (this.skillKey) {
         case "1":
           {
