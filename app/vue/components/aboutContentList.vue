@@ -1,6 +1,10 @@
 <template lang="pug">
     ul.about-content__list
-      about-content-list-item()
+      about-content-list-item(
+        v-for='(typeSkill, skillKey) in typeSkills'
+        :skillKey = 'skillKey'
+        :typeSkill = 'typeSkill'
+      )
     
     
 </template>
@@ -8,6 +12,12 @@
 <script>
 import aboutContentListItem from "./aboutContentListItem.vue";
 export default {
+  computed: {
+    // возьмем скилы из хранилища
+    typeSkills() {
+      return this.$store.state.typeSkills;
+    }
+  },
   data() {
     return {};
   },
@@ -18,6 +28,6 @@ export default {
 </script>
 
 
-<style src='styles/aboutContent.scss'  lang='scss' scoped>
+<style src='styles/aboutContentList.scss'  lang='scss' scoped>
 
 </style>

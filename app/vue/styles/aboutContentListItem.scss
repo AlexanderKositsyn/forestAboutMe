@@ -1,0 +1,35 @@
+.about-content__item {
+  flex: 1 1 auto;
+  &:nth-child(odd) {
+    flex: 0 0 35%;
+  }
+  &:nth-child(even) {
+    flex: 0 0 35%;
+    margin-right: auto;
+  }
+}
+.about-content__title {
+  font-family: "robotomedium";
+  margin-bottom: 20px;
+}
+.about-content__table {
+  width: 100%;
+  border-spacing: 0px 10px;
+}
+.about-content__row {
+  height: 30px;
+}
+.about-content__cell-skill {
+  width: 40%;
+}
+.about-content__cell-number {
+  background-color: $white;
+  width: 30%;
+  border-radius: 5px;
+  text-align: center;
+  vertical-align: middle;
+}
+.about-content__cell-percent {
+  width: 30%;
+  text-align: center;
+}
