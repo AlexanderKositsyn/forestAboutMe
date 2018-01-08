@@ -109,13 +109,11 @@ export default {
     nextSlideTopSlider(this.currentItem);
   },
   updated: function() {
-    console.log(this.descriptionNumber);
-    let siteName, siteTechnogies;
-    siteName = this.$el.querySelector(".my-works__site-name");
-    siteTechnogies = this.$el.querySelector(".my-works__site-technogies");
-    console.log(siteTechnogies);
-    textShowAnimation(siteName, 0);
-    textShowAnimation(siteTechnogies, 0);
+    // let siteName, siteTechnogies;
+    // siteName = this.$el.querySelector(".my-works__site-name");
+    // siteTechnogies = this.$el.querySelector(".my-works__site-technogies");
+    // textShowAnimation(siteName, 0);
+    // textShowAnimation(siteTechnogies, 0);
   }
 };
 </script>

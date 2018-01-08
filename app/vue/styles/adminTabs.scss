@@ -1,0 +1,10 @@
+.admin-tabs {
+  flex: 0 0 auto;
+  background-color: #f0efe9;
+  color: $slate;
+  &__link {
+    padding: 20px 70px;
+    display: inline-flex;
+    border-right: 2px solid $white;
+  }
+}

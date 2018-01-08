@@ -1,8 +1,4 @@
-@import "_variables";
-@import "_mixin";
-@import "global/_global-fonts";
-@import "global/_global-scaffolding.scss";
-@import "_animation.scss";
+@import "./_core.scss";
 @import "blocks/_person-card.scss";
 @import "blocks/_header.scss";
 @import "blocks/_button.scss";

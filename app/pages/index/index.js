@@ -13,6 +13,7 @@ import svg4everybody from "../../../node_modules/svg4everybody/dist/svg4everybod
 import preloader from "../../js_modules/preloader";
 import authorizationButtonInit from "../../js_modules/authorization-button";
 import welcome from "../../js_modules/welcome";
+import formValidation from "../../js_modules/formValidator";
 
 // запускаем скрипты только тогда, когда весь ДОМ уже готов к работе
 document.addEventListener("DOMContentLoaded", function(event) {
@@ -20,4 +21,5 @@ document.addEventListener("DOMContentLoaded", function(event) {
   welcome();
   authorizationButtonInit();
   svg4everybody();
+  formValidation();
 });

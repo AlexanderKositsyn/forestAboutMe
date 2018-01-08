@@ -25,7 +25,8 @@ module.exports = {
     about: "./app/pages/about/about.js",
     blog: "./app/pages/blog/blog.js",
     works: "./app/pages/works/works.js",
-    webgl: "./app/js_modules/water.js"
+    webgl: "./app/js_modules/water.js",
+    admin: "./app/pages/admin/admin.js"
   },
   devtool: "inline-source-map", // any "source-map"-like devtool is possible
   output: {
@@ -96,13 +97,37 @@ module.exports = {
             // Since sass-loader (weirdly) has SCSS as its default parse mode, we map
             // the "scss" and "sass" values for the lang attribute to the right configs here.
             // other preprocessors should work out of the box, no loader config like this necessary.
-            scss: ["vue-style-loader", "css-loader", "sass-loader"],
+            scss: [
+              "vue-style-loader",
+              "css-loader",
+              "sass-loader",
+              {
+                loader: "sass-resources-loader",
+                options: {
+                  // Or array of paths
+                  resources: [
+                    "./app/sass/_variables.scss",
+                    "./app/sass/_mixin.scss"
+                  ]
+                }
+              }
+            ],
             sass: [
               "vue-style-loader",
               "css-loader",
-              "sass-loader?indentedSyntax"
-            ],
-            svg: "vue-svg-loader"
+              "sass-loader?indentedSyntax",
+              "sass-resources-loader",
+              {
+                loader: "sass-resources-loader",
+                options: {
+                  // Or array of paths
+                  resources: [
+                    "./app/sass/_variables.scss",
+                    "./app/sass/_mixin.scss"
+                  ]
+                }
+              }
+            ]
           }
           // other vue-loader options go here
         }
@@ -140,6 +165,11 @@ module.exports = {
       }
     ]
   },
+  resolve: {
+    alias: {
+      styles: path.resolve(__dirname, "./app/vue/styles/")
+    }
+  },
   plugins: [
     new CleanWebpackPlugin("dist"),
     new HtmlWebpackPlugin({
@@ -166,6 +196,12 @@ module.exports = {
       chunks: ["works", "common"],
       inject: "head",
       template: "./app/pug/pages/works.pug"
+    }),
+    new HtmlWebpackPlugin({
+      filename: "admin.html",
+      chunks: ["admin", "common"],
+      inject: "body",
+      template: "./app/pug/pages/admin.pug"
     }),
     new ExtractTextPlugin("./css/[name].css"),
     new ScriptExtHtmlWebpackPlugin({
