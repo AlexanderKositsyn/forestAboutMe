@@ -4,6 +4,7 @@ import VueRouter from "vue-router";
 /*---vue components---*/
 import About from "../components/aboutContent.vue";
 import Blog from "../components/blogContent.vue";
+import Work from "../components/workContent.vue";
 
 Vue.use(VueRouter);
 
@@ -15,6 +16,10 @@ const routes = [
   {
     path: "/blog",
     component: Blog
+  },
+  {
+    path: "/work",
+    component: Work
   }
 ];
 

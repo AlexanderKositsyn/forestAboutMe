@@ -4,6 +4,9 @@
     .about-content__title Страница «Обо мне»
     about-content-list
     button.about-content__save Сохранить
+    .about-content__popup
+        .about-content__message Сообщение отправлено
+        button.about-content__close Закрыть
     
     
 </template>

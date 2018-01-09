@@ -6,6 +6,8 @@
     {{tabs[0]}}
   router-link.admin-tabs__link(to="/blog").
     {{tabs[1]}}
+  router-link.admin-tabs__link(to="/work").
+    {{tabs[2]}}
     
     
 </template>

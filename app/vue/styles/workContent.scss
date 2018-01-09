@@ -1,7 +1,14 @@
-.blog-content {
+.work-content {
   flex: 1 1 auto;
   padding-top: 40px;
-  background: linear-gradient( rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.8)), url("../../img/water.jpg") center center / cover no-repeat;
+  padding-bottom: 40px;
+  display: flex;
+  flex-direction: column;
+  background: linear-gradient(
+      rgba(255, 255, 255, 0.8),
+      rgba(255, 255, 255, 0.8)
+    ),
+    url("../../img/water.jpg") center center / cover no-repeat;
   &__title {
     font-size: 21px;
     font-family: "robotoregular";
@@ -11,18 +18,41 @@
     font-family: "robotoregular";
     margin-bottom: 20px;
   }
+  &__form {
+    flex: 1 1 auto;
+    display: flex;
+    flex-direction: column;
+  }
   &__input {
-    width: 20%;
+    width: 40%;
     display: block;
     margin-bottom: 20px;
     padding: 10px;
     border: none;
     border-radius: 10px;
-    &--text {
-      width: 40%;
-      min-height: 200px;
-      resize: none;
-    }
+  }
+  &__file-label {
+    display: block;
+    cursor: pointer;
+  }
+  &__file-input {
+    position: absolute;
+    left: -99999px;
+  }
+  &__file-picture {
+    width: 38px;
+    height: 38px;
+    overflow: hidden;
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: 10px;
+  }
+  &__file-img {
+    width: 100%;
+  }
+  &__file-text {
+    vertical-align: middle;
+    display: inline-block;
   }
   &__save {
     display: inline-block;
@@ -33,8 +63,10 @@
     color: $white;
     font-family: "robotoregular";
     width: 120px;
+    margin-top: auto;
   }
   &__popup {
+    display: none;
     position: absolute;
     top: 50%;
     left: 50%;
@@ -64,8 +96,11 @@
 .container {
   max-width: 1800px;
   margin: 0 auto;
+  width: 100%;
+  height: 100%;
   padding-left: 38px;
   padding-right: 38px;
+  flex: 1 1 auto;
   display: flex;
   flex-direction: column;
   position: relative;
