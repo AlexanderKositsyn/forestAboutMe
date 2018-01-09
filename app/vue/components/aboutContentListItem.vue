@@ -6,7 +6,7 @@ li.about-content__item
             td.about-content__cell-skill
                 span {{skill.name}}
             td.about-content__cell-number
-                span {{skill.percent}}
+                input.about-content__input(v-model="skill.percent")
             td.about-content__cell-percent
                 span %
     
@@ -38,9 +38,6 @@ export default {
         }
       }
     }
-  },
-  data() {
-    return {};
   }
 };
 </script>

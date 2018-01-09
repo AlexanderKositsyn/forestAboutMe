@@ -49,5 +49,7 @@ export default new Vuex.Store({
       "2": "Backend",
       "3": "Workflow"
     }
-  }
+  },
+  getters: {},
+  mutations: {}
 });

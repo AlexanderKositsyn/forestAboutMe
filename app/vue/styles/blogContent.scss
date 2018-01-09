@@ -1,7 +1,11 @@
 .blog-content {
   flex: 1 1 auto;
   padding-top: 40px;
-  background: linear-gradient( rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.8)), url("../../img/water.jpg") center center / cover no-repeat;
+  background: linear-gradient(
+      rgba(255, 255, 255, 0.8),
+      rgba(255, 255, 255, 0.8)
+    ),
+    url("../../img/water.jpg") center center / cover no-repeat;
   &__title {
     font-size: 21px;
     font-family: "robotoregular";
@@ -45,6 +49,7 @@
     color: $moss;
     text-align: center;
     border-radius: 10px;
+    display: none;
   }
   &__message {
     margin-bottom: 20px;
