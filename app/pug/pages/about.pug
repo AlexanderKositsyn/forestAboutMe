@@ -21,7 +21,7 @@ block person-card
     div(class="header__avatar person-card") 
         .person-card__top
             .person-card__pic
-                img(class='person-card__img' src=require("../../img/avatar_my.jpg"))
+                img(class='person-card__img' src="../../images/avatar_my.jpg")
         .person-card__bottom
             .person-card__fio.
                 Александр Косицын
@@ -37,7 +37,7 @@ block main
                 h1.title.title--underlined.about-me__title-about Обо мне
                     +svgTemp('about-me__svg-about', 'about_header')
                 .about-me__pic
-                    img(src=require('../../img/avatar_my.jpg')).about-me__img
+                    img(src='../../images/avatar_my.jpg').about-me__img
                 h1.title.title--underlined.about-me__title-whoIsI Кто я
                 .about-me__text
                     p Я веб разработчик из Новосибирска. Мне 27 лет. Я занимаюсь разработкой современных сайтов и приложений. Мне нравится делать интересные и современные проекты.
@@ -121,16 +121,7 @@ block main
             .map#map
             .contacts__wrapper
                 h1.title.title--underlined.contacts__title Контакты
-                
-                - var icons = [['skype', 'skype_kdn'], ["envelope2",'astahov@gmail.com'], ['phone2','+7 931 200 93 24'], ['map_marker','Новосибирск, ул. Инская, д.14' ]]
-                ul.contacts__list
-                    //цикл для генерирования списка контактов
-                    each val in icons
-                        li.contacts__item
-                            a(href='#').contacts__link
-                                svg.contacts__svg
-                                    use(xlink:href=require('../../icons/sprite/sprite.svg')+"#"+`${val[0]}`)
-                                | #{val[1]}
+                +contactsListMixin()
 
     
                         

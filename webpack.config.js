@@ -8,6 +8,8 @@ const OptimizeCssAssetsPlugin = require("optimize-css-assets-webpack-plugin");
 const StyleLintPlugin = require("stylelint-webpack-plugin");
 const UglifyJsPlugin = require("uglifyjs-webpack-plugin");
 const ScriptExtHtmlWebpackPlugin = require("script-ext-html-webpack-plugin");
+const CopyWebpackPlugin = require("copy-webpack-plugin");
+const HtmlWebpackPugPlugin = require("html-webpack-pug-plugin");
 
 const PATHS = {
   source: path.join(__dirname, "source"),
@@ -15,11 +17,6 @@ const PATHS = {
 };
 
 module.exports = {
-  //функция которая возвращает следить или нет в зависимости от глобальной переменной NODE_ENV, которая устанавливается в scripts npm
-  watch: (function() {
-    return process.env.NODE_ENV === "development";
-  })(),
-
   entry: {
     index: "./app/pages/index/index.js",
     about: "./app/pages/about/about.js",
@@ -28,7 +25,6 @@ module.exports = {
     webgl: "./app/js_modules/water.js",
     admin: "./app/pages/admin/admin.js"
   },
-  devtool: "inline-source-map", // any "source-map"-like devtool is possible
   output: {
     path: PATHS.dist,
     filename: "./js/[name].bundle.js"
@@ -40,13 +36,6 @@ module.exports = {
         exclude: /(node_modules|bower_components)/,
 
         loader: "babel-loader"
-      },
-      {
-        test: /\.pug$/,
-        loader: "pug-loader",
-        options: {
-          pretty: true
-        }
       },
       {
         test: /\.scss$/,
@@ -171,7 +160,89 @@ module.exports = {
     }
   },
   plugins: [
+    new ExtractTextPlugin("./css/[name].css"),
+    new ScriptExtHtmlWebpackPlugin({
+      defer: "webgl"
+    }),
+    new webpack.optimize.CommonsChunkPlugin({
+      name: "common"
+    }),
+    new webpack.ProvidePlugin({
+      identifier: "./app/js_modules/map.js"
+    })
+  ]
+};
+
+console.log(process.env.NODE_ENV);
+
+// продакшн (компилировать все pug файлы в html не надо. а надо сдеать pug файлы со скриптами уже подключенными)
+// не pug loader чтобы не компилировались файлы pug
+if (process.env.NODE_ENV === "production") {
+  console.log("production mode");
+  // module.exports.devtool = "#source-map";
+
+  module.exports.plugins = (module.exports.plugins || []).concat([
     new CleanWebpackPlugin("dist"),
+    new HtmlWebpackPlugin({
+      filename: "views/pages/index.pug",
+      // указываем подключаемый budle
+      chunks: ["index", "common", "webgl"],
+      inject: "head",
+      template: "./app/pug/pages/index.pug"
+    }),
+    new HtmlWebpackPlugin({
+      filename: "views/pages/blog.pug",
+      chunks: ["blog", "common"],
+      inject: "head",
+      template: "./app/pug/pages/blog.pug"
+    }),
+    new HtmlWebpackPlugin({
+      filename: "views/pages/works.pug",
+      chunks: ["works", "common"],
+      inject: "head",
+      template: "./app/pug/pages/works.pug"
+    }),
+    new HtmlWebpackPlugin({
+      filename: "views/pages/admin.pug",
+      chunks: ["admin", "common"],
+      inject: "body",
+      template: "./app/pug/pages/admin.pug"
+    }),
+    new HtmlWebpackPlugin({
+      filename: "views/pages/about.pug",
+      chunks: ["about", "common"],
+      inject: "head",
+      template: "./app/pug/pages/about.pug"
+    }),
+    new OptimizeCssAssetsPlugin({
+      cssProcessorOptions: { discardComments: { removeAll: true } }
+    }),
+    new CopyWebpackPlugin([
+      { from: "./app/pug", to: "views", ignore: ["pages/**.*"] }
+    ])
+  ]);
+}
+
+// для разработки (компилируем все pug в html)
+if (process.env.NODE_ENV === "development") {
+  console.log("development mode");
+  //функция которая возвращает следить или нет в зависимости от глобальной переменной NODE_ENV, которая устанавливается в scripts npm
+  module.exports.watch = (function() {
+    return process.env.NODE_ENV === "development";
+  })();
+  // на разработке перегоняем все файлы с помощью этого лоадера
+  console.log(module.exports.module.rules);
+  module.exports.module.rules = (module.exports.module.rules || []).concat([
+    {
+      test: /\.pug$/,
+      loader: "pug-loader",
+      options: {
+        pretty: true
+      }
+    }
+  ]);
+  module.exports.devtool = "inline-source-map"; // any "source-map"-like devtool is possible
+  module.exports.plugins = (module.exports.plugins || []).concat([
     new HtmlWebpackPlugin({
       filename: "index.html",
       // указываем подключаемый budle
@@ -203,23 +274,8 @@ module.exports = {
       inject: "body",
       template: "./app/pug/pages/admin.pug"
     }),
-    new ExtractTextPlugin("./css/[name].css"),
-    new ScriptExtHtmlWebpackPlugin({
-      defer: "webgl"
-    }),
-    new webpack.optimize.CommonsChunkPlugin({
-      name: "common"
-    }),
-    new webpack.ProvidePlugin({
-      identifier: "./app/js_modules/map.js"
-    }),
-
-    // new OptimizeCssAssetsPlugin({
-    //   cssProcessorOptions: { discardComments: { removeAll: true } }
-    // }),
     new StyleLintPlugin({
       configFile: "./.stylelintrc"
     })
-    // new UglifyJsPlugin()
-  ]
-};
+  ]);
+}

@@ -1,0 +1,28 @@
+header(class=`header ${header_modif}`)
+                +svgTemp('header__triangle', 'bg')(preserveAspectRatio="none" height='150px')
+                .container.header__container
+                    //- тут можно вставить svg для фона хедер
+                    block headerSvg
+                    +socialListMixin('header__socials', [['vk','https://vk.com/alex_gorn20'],['github','https://github.com/AlexanderKositsyn'],['in','#']])
+                    //- этот блок можно изменять в других файлах
+                    block person-card
+                        div(class="header__avatar person-card") 
+                            .person-card__top
+                                .person-card__pic
+                                    img(class='person-card__img' src="../../images/avatar_my.jpg")
+                            .person-card__bottom
+                                .person-card__name-text Блог
+                                    +svgTemp("person-card__svg-blog", 'blog_header')
+                                .person-card__text-amplua.
+                                    Статьи, которые я написал
+                    .header__pages-wrapper
+                            .header__pages-left
+                            .header__pages-right
+                            +pagesListMixin('header__pages-list',[['Мои работы','./works.html'],['Обо мне','./about.html'],['Блог','./blog.html'],['Авторизация','/']], pagesListActiveItem)
+                    div(class="header__hamburger-menu")
+                        a(href="#" class="hamburger")
+                            <span class="hamburger__line"></span>
+                            <span class="hamburger__line"></span>
+                            <span class="hamburger__line"></span>
+                    a(href='#' class="bottom-arrow" data-scroll-to="1")
+                        +svgTemp('bottom-arrow__svg', 'arrow_down') 

@@ -2,6 +2,7 @@
 li.about-content__item
     .title.about-content__title {{typeSkill}}
     table.about-content__table
+        //- тут filteredSkills это отфильтрованные объекты, поэтому тут это ссылки на $store.skills
         tr.about-content__row(v-for='skill in filteredSkills')
             td.about-content__cell-skill
                 span {{skill.name}}
@@ -21,7 +22,9 @@ export default {
   },
   computed: {
     filteredSkills() {
+      // возьмем массив скилов с объектами
       let skills = this.$store.state.skills;
+      // в зависимоти от пришедшего от родителя ключа типа скилов фильтруем все объекты в  массиве skills
       switch (this.skillKey) {
         case "1":
           {

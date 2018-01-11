@@ -1,3 +1,7 @@
+/*---images---*/
+import "../../img/avatar_my.jpg";
+import "../../icons/sprite/sprite.svg";
+
 /*---styles---*/
 import "normalize.css";
 import "../../sass/base.scss";

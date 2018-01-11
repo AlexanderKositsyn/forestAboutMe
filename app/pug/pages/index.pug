@@ -17,7 +17,7 @@ block wrapper_addon
             .flipper__welcome.welcome
                 .welcome__top
                     .welcome__pic
-                        img(class='welcome__img' src=require("../../img/avatar_my.jpg"))
+                        img(class='welcome__img' src="../../images/avatar_my.jpg")
                 .welcome__bottom
                     .welcome__name-text.
                         Александр Косицын
@@ -36,11 +36,11 @@ block wrapper_addon
                     .authorization__wrapper-form
                         label.authorization__label
                             svg.authorization__input-svg
-                                use(xlink:href=require(`../../icons/sprite/sprite.svg`)+'#login')
+                                use(xlink:href=`../../images/sprite.svg`+'#login')
                             input(type="text" name='userLogin' id='user_login' placeholder='Логин' class="authorization__input")
                         label.authorization__label
                             svg.authorization__input-svg
-                                use(xlink:href=require(`../../icons/sprite/sprite.svg`)+"#password")
+                                use(xlink:href=`../../images/sprite.svg`+"#password")
                             input(type="text" name='userPassword' id='user_password' placeholder='Пароль' class="authorization__input")
                         <label class="authorization__label-isHuman">
                             <input type="checkbox" name="userisHuman"  id='user_isHuman'class="authorization__input authorization__input--checkbox" value='yes'>

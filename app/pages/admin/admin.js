@@ -6,6 +6,7 @@ import "../../sass/_core.scss";
 import Vue from "vue";
 
 /*---vue components---*/
+
 import admin from "../../vue/admin.vue";
 
 /*---vue routes---*/

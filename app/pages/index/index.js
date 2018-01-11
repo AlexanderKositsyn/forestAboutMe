@@ -1,6 +1,7 @@
 /*--images---*/
 import "../../img/water.jpg";
 import "../../img/water-maps.jpg";
+import "../../icons/sprite/sprite.svg";
 
 /*---styles---*/
 import "normalize.css";
