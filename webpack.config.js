@@ -214,6 +214,7 @@ if (process.env.NODE_ENV === "production") {
       inject: "head",
       template: "./app/pug/pages/about.pug"
     }),
+    new HtmlWebpackPugPlugin(),
     new OptimizeCssAssetsPlugin({
       cssProcessorOptions: { discardComments: { removeAll: true } }
     }),

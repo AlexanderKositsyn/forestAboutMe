@@ -1,5 +1,22 @@
 extends ../layout.pug
 
+block doctype
+    <!DOCTYPE html>
+    html(lang="en")
+        head
+            meta(charset="UTF-8")
+            meta(name="viewport", content="width=device-width, initial-scale=1.0")
+            meta(http-equiv="X-UA-Compatible", content="ie=edge")   
+            //- тут нужно задать title для страницы
+            title #{title}
+            <!--[if gte IE 8]>
+                <link rel="stylesheet" type="text/css" href="ie8-and-up.css" />
+            <![endif]-->
+        
+        
+
+        body
+
 //- создаем пременные для страницы works (задаем тайтл и модификатор для враппера)
 block variables
     - title= 'about';
