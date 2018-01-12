@@ -1,0 +1,148 @@
+extends ../layout.pug
+
+block doctype
+    <!DOCTYPE html>
+    html(lang="en")
+        head
+            meta(charset="UTF-8")
+            meta(name="viewport", content="width=device-width, initial-scale=1.0")
+            meta(http-equiv="X-UA-Compatible", content="ie=edge")   
+            //- тут нужно задать title для страницы
+            title #{title}
+            <!--[if gte IE 8]>
+                <link rel="stylesheet" type="text/css" href="ie8-and-up.css" />
+            <![endif]-->
+        
+        
+
+                link(href="../.././css/about.css" rel="stylesheet")
+                script(type="text/javascript" src="../.././js/common.bundle.js")
+                script(type="text/javascript" src="../.././js/about.bundle.js")
+        body
+
+//- создаем пременные для страницы works (задаем тайтл и модификатор для враппера)
+block variables
+    - title= 'about';
+    - wrapper_modif= 'wrapper--about';
+    - footer_modif= 'footer--about';
+    - isPage = true;
+    - header_modif= 'header--about'
+    - pagesListActiveItem = 1;
+
+block scripts
+    script( src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAFgkyZElMybUir8MZo3_jbwRXx0zWrya0&callback=initMap" async defer)
+
+//- это из блока header тут можно вставить svg 
+block headerSvg
+    +svgTemp("header__svg-portfolio", 'portfolio_header')
+
+//- это из блока header замена другим блоком
+block person-card
+    div(class="header__avatar person-card") 
+        .person-card__top
+            .person-card__pic
+                img(class='person-card__img' src="../../images/avatar_my.jpg")
+        .person-card__bottom
+            .person-card__fio.
+                Александр Косицын
+            .person-card__whoIsSite.
+                Личный сайт веб разрабочика
+//- другой контент
+block main 
+    main(class='main main--about-me')
+        section.about-me 
+            +svgTemp('about-me__bg-left', 'about_bg_left')(preserveAspectRatio="none")
+            +svgTemp('about-me__bg-right', 'about_bg_right')(preserveAspectRatio="none")
+            .about-me__description
+                h1.title.title--underlined.about-me__title-about Обо мне
+                    +svgTemp('about-me__svg-about', 'about_header')
+                .about-me__pic
+                    img(src='../../images/avatar_my.jpg').about-me__img
+                h1.title.title--underlined.about-me__title-whoIsI Кто я
+                .about-me__text
+                    p Я веб разработчик из Новосибирска. Мне 27 лет. Я занимаюсь разработкой современных сайтов и приложений. Мне нравится делать интересные и современные проекты.
+                    p Этот сайт я сделал в рамках обучения в Школе онлайн образования LoftSchool. Чуть позже я освежу в нём свой контент. А пока посмотрите,как тут всё классно и красиво!
+            .about-me__skills
+                h1.title.title--underlined.about-me__title-myBenefit Чем я могу быть вам полезен
+                .about-me__skills-text.
+                    Больше всего меня привлекет Frontend разработка, но я также знаком и могу решать не сложные задачи на Backend. Но давайте по порядку.
+                ul.about-me__skills-list
+                    li.about-me__skills-item.about-me__skills-item--frontend
+                        .about-me__title-skills Frontend
+                        ul.about-me__circle-list
+                            li.about-me__circle-item 
+                                <svg class='about-me__circle-svg' viewBox ='0 0 100 100'>
+                                    <circle class='about-me__outer-circle' style="stroke-dasharray: 0, 158;"  data-percent='95' r='25' cx='50' cy='50'/>
+                                    <circle class='about-me__inner-circle' r='35' cx='50' cy='50'/>
+                                </svg>   
+                                span.about-me__circle-text HTML5
+                            li.about-me__circle-item 
+                                <svg class='about-me__circle-svg' viewBox ='0 0 100 100'>
+                                    <circle class='about-me__outer-circle' style="stroke-dasharray: 0, 158;" data-percent='10' r='25' cx='50' cy='50'/>
+                                    <circle class='about-me__inner-circle' r='35' cx='50' cy='50'/>
+                                </svg>
+                                span.about-me__circle-text CSS3    
+                            li.about-me__circle-item
+                                
+                                <svg class='about-me__circle-svg' viewBox ='0 0 100 100'>
+                                    <circle class='about-me__outer-circle' style="stroke-dasharray: 0, 158;" data-percent='20' r='25' cx='50' cy='50'/>
+                                    <circle class='about-me__inner-circle' r='35' cx='50' cy='50'/>
+                                </svg> 
+                                span.about-me__circle-text JavaScript<br>& jQuery   
+                    li.about-me__skills-item.about-me__skills-item--backend
+                        .about-me__title-skills Backend
+                        ul.about-me__circle-list
+                            li.about-me__circle-item            
+                                <svg class='about-me__circle-svg' viewBox ='0 0 100 100'>
+                                    <circle class='about-me__outer-circle' style="stroke-dasharray: 0, 158;" data-percent='30' r='25' cx='50' cy='50'/>
+                                    <circle class='about-me__inner-circle' r='35' cx='50' cy='50'/>
+                                </svg>
+                                span.about-me__circle-text PHP   
+                            li.about-me__circle-item 
+                                <svg class='about-me__circle-svg' viewBox ='0 0 100 100'>
+                                    <circle class='about-me__outer-circle' style="stroke-dasharray: 0, 158;" data-percent='25' r='25' cx='50' cy='50'/>
+                                    <circle class='about-me__inner-circle' r='35' cx='50' cy='50'/>
+                                </svg>   
+                                span.about-me__circle-text mySQL
+                            li.about-me__circle-item 
+                                <svg class='about-me__circle-svg' viewBox ='0 0 100 100'>
+                                    <circle class='about-me__outer-circle' style="stroke-dasharray: 0, 158;" data-percent='150' r='25' cx='50' cy='50'/>
+                                    <circle class='about-me__inner-circle' r='35' cx='50' cy='50'/>
+                                </svg>  
+                                span.about-me__circle-text Node.js<br>& npm 
+                            li.about-me__circle-item 
+                                <svg class='about-me__circle-svg' viewBox ='0 0 100 100'>
+                                    <circle class='about-me__outer-circle' style="stroke-dasharray: 0, 158;" data-percent='60' r='25' cx='50' cy='50'/>
+                                    <circle class='about-me__inner-circle' r='35' cx='50' cy='50'/>
+                                </svg>   
+                                span.about-me__circle-text Mongo.db
+                    li.about-me__skills-item.about-me__skills-item--workflow
+                        .about-me__title-skills WorkFlow
+                        ul.about-me__circle-list
+                            li.about-me__circle-item 
+                                <svg class='about-me__circle-svg' viewBox ='0 0 100 100'>
+                                    <circle class='about-me__outer-circle' style="stroke-dasharray: 0, 158;" data-percent='9' r='25' cx='50' cy='50'/>
+                                    <circle class='about-me__inner-circle' r='35' cx='50' cy='50'/>
+                                </svg> 
+                                span.about-me__circle-text Git  
+                            li.about-me__circle-item 
+                                <svg class='about-me__circle-svg' viewBox ='0 0 100 100'>
+                                    <circle class='about-me__outer-circle' style="stroke-dasharray: 0, 158;" data-percent='80' r='25' cx='50' cy='50'/>
+                                    <circle class='about-me__inner-circle' r='35' cx='50' cy='50'/>
+                                </svg>
+                                span.about-me__circle-text Gulp   
+                            li.about-me__circle-item 
+                                <svg class='about-me__circle-svg' viewBox ='0 0 100 100'>
+                                    <circle class='about-me__outer-circle' style="stroke-dasharray: 0, 158;" data-percent='70' r='25' cx='50' cy='50'/>
+                                    <circle class='about-me__inner-circle' r='35' cx='50' cy='50'/>
+                                </svg> 
+                                span.about-me__circle-text Bower  
+        section.contacts
+            .map#map
+            .contacts__wrapper
+                h1.title.title--underlined.contacts__title Контакты
+                +contactsListMixin()
+
+    
+                        
+                    

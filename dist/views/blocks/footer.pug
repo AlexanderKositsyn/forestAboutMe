@@ -1,0 +1,20 @@
+footer(class=`footer ${footer_modif}`) 
+                .container.footer__container.footer__container--top
+                    .footer__column.footer__column--left
+                        .footer__about
+                            span.footer__about-text.
+                                Этот сайт я сделал в рамках обучения в Школе онлайн образования LoftSchool. 
+                    .footer__column.footer__column--center
+                        - var pages = ['Мои работы', "Обо мне", 'Блог', 'Авторизация']
+                            +pagesListMixin('footer__pages-list',[['Мои работы','#'],['Обо мне','#'],['Блог','#'],['Авторизация','#']])
+                            +socialListMixin('footer__socials', [['vk','https://vk.com/alex_gorn20'],['github','https://github.com/AlexanderKositsyn'],['in','#']])
+                                            
+                    .footer__column.footer__column--right
+                        .footer__quote
+                            span.footer__quote-text.
+                                Всегда пишите код так, будто сопровождать его будет склонный к насилию психопат, который знает, где вы живете.<br>
+                            <span class='footer__quote-author'> — Martin Golding</span>
+                .container.footer__container.footer__container--bottom
+                    .footer__copyright
+                        span.footer__copyright-text.
+                            © Александр Косицын | Создано с любовью в LoftSchool | 2017
