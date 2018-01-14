@@ -14,6 +14,9 @@ svg4everybody();
 /*---vue components---*/
 import Slider from "../../vue/slider/slider.vue";
 
+/*---vue store---*/
+import store from "../../store/store";
+
 /*---js modules---*/
 import initHamburger from "../../js_modules/hamburger";
 import initBlur from "../../js_modules/blur";
@@ -41,6 +44,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
   //вызываем модуль vue для слайдера
   window.vm = new Vue({
     el: "slider",
+    store,
     render: h => h(Slider)
   });
 });

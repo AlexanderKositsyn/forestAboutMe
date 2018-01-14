@@ -13,6 +13,7 @@
 
 <script>
 import aboutContentList from "./aboutContentList.vue";
+import axios from "axios";
 export default {
   data() {
     return {};
@@ -23,7 +24,17 @@ export default {
   methods: {
     savePercent() {
       //тут короче нужно сделать push на сервер
-      console.log(this.$store.state.skills);
+      let store = this.$store;
+      axios
+        .post("/api/about", {
+          store: store.state.skills
+        })
+        .then(function(msg) {
+          console.log(msg);
+        })
+        .catch(function(error) {
+          console.log(error);
+        });
     }
   }
 };

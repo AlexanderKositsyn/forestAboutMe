@@ -60,9 +60,10 @@
     opacity: 0;
     @include tablet {
     }
-    &--active {
-      opacity: 1;
-    }
+  }
+
+  &__slider-item.active {
+    opacity: 1;
   }
   &__slider-img {
     position: absolute;

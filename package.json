@@ -71,6 +71,7 @@
     "wiredep": "^4.0.0"
   },
   "scripts": {
+    "nodemon": "nodemon ./bin/www",
     "start": "cross-env NODE_ENV=development webpack-dev-server --open",
     "build": "cross-env NODE_ENV=production webpack ",
     "serv": "static dist"
@@ -83,7 +84,17 @@
   "author": "AlexanderKositsyn <alex.gorn20@gmail.com>",
   "license": "MIT",
   "dependencies": {
+    "axios": "^0.17.1",
+    "body-parser": "~1.18.2",
+    "cookie-parser": "~1.4.3",
+    "debug": "~2.6.9",
+    "express": "~4.15.5",
+    "formidable": "^1.1.1",
+    "mongoose": "^4.13.9",
+    "morgan": "~1.9.0",
     "normalize.css": "^7.0.0",
+    "request": "^2.83.0",
+    "serve-favicon": "~2.4.5",
     "svg4everybody": "^2.1.9",
     "vue": "^2.5.13",
     "vue-router": "^3.0.1",

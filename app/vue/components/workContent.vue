@@ -2,12 +2,12 @@
 .work-content
   .container
     .work-content__title Страница «Мои работы»
-    form.work-content__form(enctype="multipart/form-data")
+    form.work-content__form(enctype="multipart/form-data" action='/api/works' method='post')
       .work-content__title-form Добавить работу
-      input.work-content__input(v-model='workTitle' placeholder='Название проета')
-      input.work-content__input(v-model='workTechnologies' placeholder='Технологии')
+      input.work-content__input(v-model='workTitle' placeholder='Название проета' name="workTitle" )
+      input.work-content__input(v-model='workTechnologies' placeholder='Технологии' name="workTechnologies" )
       label.work-content__file-label
-        input(type='file').work-content__file-input( @change="processFile($event)" placeholder='Загрузить картинку')
+        input(type='file' name="image").work-content__file-input( @change="processFile($event)" placeholder='Загрузить картинку')
         div.work-content__file-picture
           img.work-content__file-img(src="../../img/file_icon.png")
         div.work-content__file-text Загрузить картинку
@@ -19,6 +19,7 @@
 </template>
 
 <script>
+import axios from "axios";
 export default {
   data() {
     return {
@@ -31,7 +32,7 @@ export default {
     processFile(event) {
       // при изменении input file записываем объект файл в fileData
       this.fileData = event.target.files[0];
-      console.log(this.someData);
+      console.log(this.fileData);
     },
     workAdd() {
       // по нажатию на кнопку сохранить отправляем на сервер новые данные

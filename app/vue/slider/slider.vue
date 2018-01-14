@@ -8,7 +8,7 @@ mixin svgTemp(className, svgId)
     .my-works__slider
         .my-works__slider-wrapper
             ul.my-works__slider-list
-                li.my-works__slider-item(v-for="item in sliderData")
+                li.my-works__slider-item(v-for="item in sliderData" :class="{ active: item.active }")
                     img( :src="getImgUrl(item.imgSrc)").my-works__slider-img
     .my-works__decription
         .my-works__decription-wrapper
@@ -35,55 +35,68 @@ mixin svgTemp(className, svgId)
 // фиг знает нужно ли ипортировать сюда svg
 // import "../../icons/sprite/sprite.svg";
 
-// данные для слайдера (пути, заголовки и описание проектов)
-import sliderData from "../slider/sliderData.js";
+import axios from "axios";
+
 // функция анимации появления текта
 import textShowAnimation from "../../js_modules/animation/textShowAnimation";
 
 // функция для перехода нового слайда в основном слайдере
 function nextSlideTopSlider(nextItem) {
   function removeClass(item) {
-    item.classList.remove("my-works__slider-item--active");
+    item.classList.remove("active");
   }
-  [...document.querySelectorAll(".my-works__slider-item")].forEach(removeClass);
-  document
-    .querySelectorAll(".my-works__slider-item")
-    [nextItem].classList.add("my-works__slider-item--active");
+
+  if ([...document.querySelectorAll(".my-works__slider-item")].length !== 0) {
+    [...document.querySelectorAll(".my-works__slider-item")].forEach(
+      removeClass
+    );
+    document
+      .querySelectorAll(".my-works__slider-item")
+      [nextItem].classList.add("active");
+  }
 }
 
 export default {
   name: "slider",
   data() {
     return {
-      sliderData,
       currentItem: 0
     };
   },
   methods: {
     previousButtonClicked() {
       this.currentItem == 0
-        ? (this.currentItem = this.sliderData.length - 1)
+        ? (this.currentItem = this.$store.state.sliderData.length - 1)
         : --this.currentItem;
       nextSlideTopSlider(this.currentItem);
       //   console.log("currentItem" + this.currentItem);
     },
     nextButtonClicked() {
-      this.currentItem == this.sliderData.length - 1
+      this.currentItem == this.$store.state.sliderData.length - 1
         ? (this.currentItem = 0)
         : ++this.currentItem;
       nextSlideTopSlider(this.currentItem);
     },
+    //тут нужно создать путь до папки
+
     getImgUrl(path) {
-      return require("../../img/" + path);
+      return "../images/" + path;
     }
   },
   computed: {
+    sliderData() {
+      return this.$store.state.sliderData;
+    },
     slideName() {
-      return this.sliderData[this.descriptionNumber].siteName;
+      if (this.$store.state.sliderData.length !== 0) {
+        return this.$store.state.sliderData[this.descriptionNumber].siteName;
+      }
     },
     slideTechnogies() {
-      console.log(this.sliderData[this.descriptionNumber].siteTechnogies);
-      return this.sliderData[this.descriptionNumber].siteTechnogies;
+      if (this.$store.state.sliderData.length !== 0) {
+        return this.$store.state.sliderData[this.descriptionNumber]
+          .siteTechnogies;
+      }
     },
     descriptionNumber() {
       return this.currentItem;
@@ -91,7 +104,6 @@ export default {
     },
     // основной слайдер
     sliderTop() {
-      console.log(document.querySelectorAll(".my-works__slider-item"));
       document
         .querySelectorAll(".my-works__slider-item")
         [currentItem].classList.add(".my-works__slider-item--active");
@@ -101,13 +113,29 @@ export default {
       return `${-this.currentItem * 100}%`;
     },
     sliderPrevious() {
-      return `${(this.sliderData.length - 1 - this.currentItem) * 100}%`;
+      return `${(this.$store.state.sliderData.length - 1 - this.currentItem) *
+        100}%`;
     }
   },
-  mounted: function() {
-    // console.log();
-    nextSlideTopSlider(this.currentItem);
+  created() {
+    console.log("запрос на /api/works");
+    let store = this.$store;
+
+    //возьмем все скилы из БД и запишем их в state
+    axios
+      .get("/api/works")
+      .then(function(response) {
+        console.log("from /api/works response");
+        console.log(response.data.sliderItems);
+        // когда придет ответ запишем в store
+        store.commit("setSliderData", response.data.sliderItems);
+      })
+      .then(nextSlideTopSlider(this.currentItem))
+      .catch(function(error) {
+        console.log(error);
+      });
   },
+
   updated: function() {
     // let siteName, siteTechnogies;
     // siteName = this.$el.querySelector(".my-works__site-name");

@@ -7,7 +7,7 @@ li.about-content__item
             td.about-content__cell-skill
                 span {{skill.name}}
             td.about-content__cell-number
-                input.about-content__input(v-model="skill.percent")
+                input.about-content__input(v-model="skill.percents")
             td.about-content__cell-percent
                 span %
     
@@ -24,20 +24,25 @@ export default {
     filteredSkills() {
       // возьмем массив скилов с объектами
       let skills = this.$store.state.skills;
+      console.log("in filteredSkills");
+      console.log(skills);
       // в зависимоти от пришедшего от родителя ключа типа скилов фильтруем все объекты в  массиве skills
-      switch (this.skillKey) {
-        case "1":
-          {
-            return skills.filter(item => item.type === "1");
+      // проверив есть ли они
+      if (skills.lenght !== 0) {
+        switch (this.skillKey) {
+          case "1":
+            {
+              return skills.filter(item => item.type === 1);
+            }
+            break;
+          case "2":
+            {
+              return skills.filter(item => item.type === 2);
+            }
+            break;
+          case "3": {
+            return skills.filter(item => item.type === 3);
           }
-          break;
-        case "2":
-          {
-            return skills.filter(item => item.type === "2");
-          }
-          break;
-        case "3": {
-          return skills.filter(item => item.type === "3");
         }
       }
     }

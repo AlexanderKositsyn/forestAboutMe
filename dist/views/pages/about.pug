@@ -70,73 +70,42 @@ block main
                     li.about-me__skills-item.about-me__skills-item--frontend
                         .about-me__title-skills Frontend
                         ul.about-me__circle-list
-                            li.about-me__circle-item 
-                                <svg class='about-me__circle-svg' viewBox ='0 0 100 100'>
-                                    <circle class='about-me__outer-circle' style="stroke-dasharray: 0, 158;"  data-percent='95' r='25' cx='50' cy='50'/>
-                                    <circle class='about-me__inner-circle' r='35' cx='50' cy='50'/>
-                                </svg>   
-                                span.about-me__circle-text HTML5
-                            li.about-me__circle-item 
-                                <svg class='about-me__circle-svg' viewBox ='0 0 100 100'>
-                                    <circle class='about-me__outer-circle' style="stroke-dasharray: 0, 158;" data-percent='10' r='25' cx='50' cy='50'/>
-                                    <circle class='about-me__inner-circle' r='35' cx='50' cy='50'/>
-                                </svg>
-                                span.about-me__circle-text CSS3    
-                            li.about-me__circle-item
-                                
-                                <svg class='about-me__circle-svg' viewBox ='0 0 100 100'>
-                                    <circle class='about-me__outer-circle' style="stroke-dasharray: 0, 158;" data-percent='20' r='25' cx='50' cy='50'/>
-                                    <circle class='about-me__inner-circle' r='35' cx='50' cy='50'/>
-                                </svg> 
-                                span.about-me__circle-text JavaScript<br>& jQuery   
+                            if (skills)
+                                each skill in skills
+                                    - if(skill.type===1) {
+                                    li.about-me__circle-item 
+                                        <svg class='about-me__circle-svg' viewBox ='0 0 100 100'>
+                                            <circle class='about-me__outer-circle' style="stroke-dasharray: 0, 158;"  data-percent='#{skill.percents}' r='25' cx='50' cy='50'/>
+                                            <circle class='about-me__inner-circle' r='35' cx='50' cy='50'/>
+                                        </svg>   
+                                        span.about-me__circle-text #{skill.name} 
+                                    - }
                     li.about-me__skills-item.about-me__skills-item--backend
                         .about-me__title-skills Backend
                         ul.about-me__circle-list
-                            li.about-me__circle-item            
-                                <svg class='about-me__circle-svg' viewBox ='0 0 100 100'>
-                                    <circle class='about-me__outer-circle' style="stroke-dasharray: 0, 158;" data-percent='30' r='25' cx='50' cy='50'/>
-                                    <circle class='about-me__inner-circle' r='35' cx='50' cy='50'/>
-                                </svg>
-                                span.about-me__circle-text PHP   
-                            li.about-me__circle-item 
-                                <svg class='about-me__circle-svg' viewBox ='0 0 100 100'>
-                                    <circle class='about-me__outer-circle' style="stroke-dasharray: 0, 158;" data-percent='25' r='25' cx='50' cy='50'/>
-                                    <circle class='about-me__inner-circle' r='35' cx='50' cy='50'/>
-                                </svg>   
-                                span.about-me__circle-text mySQL
-                            li.about-me__circle-item 
-                                <svg class='about-me__circle-svg' viewBox ='0 0 100 100'>
-                                    <circle class='about-me__outer-circle' style="stroke-dasharray: 0, 158;" data-percent='150' r='25' cx='50' cy='50'/>
-                                    <circle class='about-me__inner-circle' r='35' cx='50' cy='50'/>
-                                </svg>  
-                                span.about-me__circle-text Node.js<br>& npm 
-                            li.about-me__circle-item 
-                                <svg class='about-me__circle-svg' viewBox ='0 0 100 100'>
-                                    <circle class='about-me__outer-circle' style="stroke-dasharray: 0, 158;" data-percent='60' r='25' cx='50' cy='50'/>
-                                    <circle class='about-me__inner-circle' r='35' cx='50' cy='50'/>
-                                </svg>   
-                                span.about-me__circle-text Mongo.db
+                            if (skills)
+                                each skill in skills
+                                    - if(skill.type===2) {
+                                    li.about-me__circle-item 
+                                        <svg class='about-me__circle-svg' viewBox ='0 0 100 100'>
+                                            <circle class='about-me__outer-circle' style="stroke-dasharray: 0, 158;"  data-percent='#{skill.percents}' r='25' cx='50' cy='50'/>
+                                            <circle class='about-me__inner-circle' r='35' cx='50' cy='50'/>
+                                        </svg>   
+                                        span.about-me__circle-text #{skill.name} 
+                                    - }
                     li.about-me__skills-item.about-me__skills-item--workflow
                         .about-me__title-skills WorkFlow
                         ul.about-me__circle-list
-                            li.about-me__circle-item 
-                                <svg class='about-me__circle-svg' viewBox ='0 0 100 100'>
-                                    <circle class='about-me__outer-circle' style="stroke-dasharray: 0, 158;" data-percent='9' r='25' cx='50' cy='50'/>
-                                    <circle class='about-me__inner-circle' r='35' cx='50' cy='50'/>
-                                </svg> 
-                                span.about-me__circle-text Git  
-                            li.about-me__circle-item 
-                                <svg class='about-me__circle-svg' viewBox ='0 0 100 100'>
-                                    <circle class='about-me__outer-circle' style="stroke-dasharray: 0, 158;" data-percent='80' r='25' cx='50' cy='50'/>
-                                    <circle class='about-me__inner-circle' r='35' cx='50' cy='50'/>
-                                </svg>
-                                span.about-me__circle-text Gulp   
-                            li.about-me__circle-item 
-                                <svg class='about-me__circle-svg' viewBox ='0 0 100 100'>
-                                    <circle class='about-me__outer-circle' style="stroke-dasharray: 0, 158;" data-percent='70' r='25' cx='50' cy='50'/>
-                                    <circle class='about-me__inner-circle' r='35' cx='50' cy='50'/>
-                                </svg> 
-                                span.about-me__circle-text Bower  
+                            if (skills)
+                                each skill in skills
+                                    - if(skill.type===3) {
+                                    li.about-me__circle-item 
+                                        <svg class='about-me__circle-svg' viewBox ='0 0 100 100'>
+                                            <circle class='about-me__outer-circle' style="stroke-dasharray: 0, 158;"  data-percent='#{skill.percents}' r='25' cx='50' cy='50'/>
+                                            <circle class='about-me__inner-circle' r='35' cx='50' cy='50'/>
+                                        </svg>   
+                                        span.about-me__circle-text #{skill.name} 
+                                    - }
         section.contacts
             .map#map
             .contacts__wrapper

@@ -15,6 +15,7 @@
 </template>
 
 <script>
+import axios from "axios";
 export default {
   data() {
     return {
@@ -30,6 +31,18 @@ export default {
         `blogName: ${this.blogName}; blogDate: ${this
           .blogDate}; blogText: ${this.blogText}`
       );
+      axios
+        .post("/api/blog", {
+          title: this.blogName,
+          date: this.blogDate,
+          body: this.blogText
+        })
+        .then(function(response) {
+          console.log(response);
+        })
+        .catch(function(error) {
+          console.log(error);
+        });
     }
   }
 };
