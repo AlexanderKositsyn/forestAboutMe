@@ -4,6 +4,10 @@ const router = express.Router();
 const { getBlogArticles, addBlogArticle } = require("../controllers/blog");
 const { getAboutSkills, saveAboutSkills } = require("../controllers/about");
 const { getWorksImages, uploadImageSlider } = require("../controllers/work");
+const { isAuth } = require("../controllers/user");
+
+// авторизация пользователя
+router.post("/user", isAuth);
 
 // если запросили обычные страницы
 router.get("/blog", getBlogArticles);

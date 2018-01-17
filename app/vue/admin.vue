@@ -40,5 +40,3 @@ export default {
 <style src='styles/admin.scss' lang='scss' scoped>
 
 </style>
-
-

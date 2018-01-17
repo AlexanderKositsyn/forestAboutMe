@@ -86,15 +86,18 @@
   "dependencies": {
     "axios": "^0.17.1",
     "body-parser": "~1.18.2",
+    "connect-mongo": "^2.0.1",
     "cookie-parser": "~1.4.3",
     "debug": "~2.6.9",
     "express": "~4.15.5",
+    "express-session": "^1.15.6",
     "formidable": "^1.1.1",
     "mongoose": "^4.13.9",
     "morgan": "~1.9.0",
     "normalize.css": "^7.0.0",
     "request": "^2.83.0",
     "serve-favicon": "~2.4.5",
+    "simple-vue-validator": "^0.14.2",
     "svg4everybody": "^2.1.9",
     "vue": "^2.5.13",
     "vue-router": "^3.0.1",
@@ -105,5 +108,8 @@
     "url": "https://github.com/AlexanderKositsyn/burger_club/issues"
   },
   "homepage": "https://github.com/AlexanderKositsyn/burger_club#readme",
-  "browserslist": ["> 1%", "last 2 versions"]
+  "browserslist": [
+    "> 1%",
+    "last 2 versions"
+  ]
 }

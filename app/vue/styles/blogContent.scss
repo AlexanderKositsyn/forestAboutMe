@@ -51,6 +51,9 @@
     border-radius: 10px;
     display: none;
   }
+  &__popup.active {
+    display: block;
+  }
   &__message {
     margin-bottom: 20px;
   }
@@ -63,6 +66,9 @@
     color: $white;
     font-family: "robotoregular";
     width: 120px;
+  }
+  &__error-message {
+    color: red;
   }
 }
 

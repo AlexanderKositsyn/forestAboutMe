@@ -641,14 +641,14 @@ function scrollIt(destination, duration = 200, easing = "linear", callback) {
 
 /***/ }),
 
-/***/ 18:
+/***/ 19:
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports = __webpack_require__.p + "images/avatar_my.jpg";
 
 /***/ }),
 
-/***/ 19:
+/***/ 20:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -688,14 +688,14 @@ function initHamburger() {
 
 /***/ }),
 
-/***/ 50:
+/***/ 52:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (immutable) */ __webpack_exports__["a"] = initMap;
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__resizeHandler__ = __webpack_require__(66);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__pointers__ = __webpack_require__(67);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__mapStyle__ = __webpack_require__(69);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__resizeHandler__ = __webpack_require__(72);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__pointers__ = __webpack_require__(73);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__mapStyle__ = __webpack_require__(75);
 
 
 
@@ -718,12 +718,12 @@ function initMap() {
 
 /***/ }),
 
-/***/ 65:
+/***/ 71:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__img_avatar_my_jpg__ = __webpack_require__(18);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__img_avatar_my_jpg__ = __webpack_require__(19);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__img_avatar_my_jpg___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__img_avatar_my_jpg__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__icons_sprite_sprite_svg__ = __webpack_require__(8);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__icons_sprite_sprite_svg___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1__icons_sprite_sprite_svg__);
@@ -731,11 +731,11 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_normalize_css___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_normalize_css__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__node_modules_svg4everybody_dist_svg4everybody__ = __webpack_require__(10);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__node_modules_svg4everybody_dist_svg4everybody___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3__node_modules_svg4everybody_dist_svg4everybody__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__js_modules_map___ = __webpack_require__(50);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__js_modules_hamburger__ = __webpack_require__(19);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__js_modules_map___ = __webpack_require__(52);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__js_modules_hamburger__ = __webpack_require__(20);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__js_modules_animation_scrollIt__ = __webpack_require__(16);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__js_modules_preloader__ = __webpack_require__(11);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__js_modules_skillAnimation__ = __webpack_require__(70);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__js_modules_skillAnimation__ = __webpack_require__(76);
 /*---images and svg---*/
 
 
@@ -771,11 +771,11 @@ document.addEventListener("DOMContentLoaded", function (event) {
 
 /***/ }),
 
-/***/ 66:
+/***/ 72:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__index__ = __webpack_require__(50);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__index__ = __webpack_require__(52);
  //по ресайзу окна заново запустить функцию initMap
 
 (function () {
@@ -799,11 +799,11 @@ document.addEventListener("DOMContentLoaded", function (event) {
 
 /***/ }),
 
-/***/ 67:
+/***/ 73:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__icons_i_map_marker_svg__ = __webpack_require__(68);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__icons_i_map_marker_svg__ = __webpack_require__(74);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__icons_i_map_marker_svg___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__icons_i_map_marker_svg__);
 
 /* harmony default export */ __webpack_exports__["a"] = (function (map) {
@@ -830,14 +830,14 @@ document.addEventListener("DOMContentLoaded", function (event) {
 
 /***/ }),
 
-/***/ 68:
+/***/ 74:
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports = __webpack_require__.p + "images/map_marker.svg";
 
 /***/ }),
 
-/***/ 69:
+/***/ 75:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -901,7 +901,7 @@ module.exports = __webpack_require__.p + "images/map_marker.svg";
 
 /***/ }),
 
-/***/ 70:
+/***/ 76:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -965,4 +965,4 @@ module.exports = __webpack_require__.p + "images/sprite.svg";
 
 /***/ })
 
-},[65]);
+},[71]);

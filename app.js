@@ -4,6 +4,9 @@ var favicon = require("serve-favicon");
 var logger = require("morgan");
 var cookieParser = require("cookie-parser");
 var bodyParser = require("body-parser");
+var session = require("express-session");
+const MongoStore = require("connect-mongo")(session);
+const mongoose = require("mongoose");
 // подлючаем Базу данных к серверу
 require("./api/models/db");
 var index = require("./routes/index");
@@ -22,6 +25,19 @@ app.use(logger("dev"));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
+app.use(
+  session({
+    secret: "sasha",
+    resave: false,
+    saveUninitialized: false,
+    cookie: {
+      path: "/",
+      httpOnly: true,
+      maxAge: null
+    },
+    store: new MongoStore({ mongooseConnection: mongoose.connection })
+  })
+);
 app.use(express.static(path.join(__dirname, "./dist")));
 
 app.use("/", index);

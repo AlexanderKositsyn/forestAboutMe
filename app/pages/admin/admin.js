@@ -15,8 +15,13 @@ import router from "../../vue/routes/index";
 /*---vue store---*/
 import store from "../../store/store";
 
+var SimpleVueValidation = require("simple-vue-validator");
+var Validator = SimpleVueValidation.Validator;
+Vue.use(SimpleVueValidation);
+
 //вызываем модуль vue для админки
 let vm = new Vue({
+  validators: {},
   el: "admin",
   router,
   store,

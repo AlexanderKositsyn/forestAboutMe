@@ -3,23 +3,24 @@ li.about-content__item
     .title.about-content__title {{typeSkill}}
     table.about-content__table
         //- тут filteredSkills это отфильтрованные объекты, поэтому тут это ссылки на $store.skills
-        tr.about-content__row(v-for='skill in filteredSkills')
-            td.about-content__cell-skill
-                span {{skill.name}}
-            td.about-content__cell-number
-                input.about-content__input(v-model="skill.percents")
-            td.about-content__cell-percent
-                span %
+        about-content-list-item-row(
+          ref="listItemRow"
+          v-for='skill in filteredSkills'
+          :skill = 'skill' 
+        )
     
     
 </template>
 
 <script>
+import aboutContentListItemRow from "./aboutContentListItemRow.vue";
+
 export default {
   props: {
     typeSkill: String,
     skillKey: String
   },
+  validators: {},
   computed: {
     filteredSkills() {
       // возьмем массив скилов с объектами
@@ -46,6 +47,13 @@ export default {
         }
       }
     }
+  },
+  components: {
+    "about-content-list-item-row": aboutContentListItemRow
+  },
+  mounted() {
+    console.log("this");
+    console.log(this);
   }
 };
 </script>

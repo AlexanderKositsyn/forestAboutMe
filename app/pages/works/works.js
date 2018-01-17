@@ -1,6 +1,11 @@
 /*---images---*/
 import "../../img/avatar_my.jpg";
 import "../../icons/sprite/sprite.svg";
+import "../../img/feeds_avatar1.png";
+import "../../img/feeds_avatar2.png";
+import "../../img/site1.png";
+import "../../img/site2.png";
+import "../../img/site3.png";
 
 /*---styles---*/
 import "normalize.css";

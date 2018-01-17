@@ -8,10 +8,10 @@ module.exports.getBlogPage = function(req, res, next) {
   const sendObj = {
     title: "My Blog"
   };
-  console.log("api request");
+  // console.log("api request");
   request(requestOptions, function(err, response, body) {
-    console.log("api request done");
-    console.log(JSON.parse(body));
+    // console.log("api request done");
+    // console.log(JSON.parse(body));
     res.render("pages/blog.pug", JSON.parse(body));
   });
 };

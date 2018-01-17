@@ -26,3 +26,4 @@ mongoose.connection.on("connected", function() {
 require("./skills");
 require("./blog");
 require("./work");
+require("./user");

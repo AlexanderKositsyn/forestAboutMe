@@ -38,4 +38,5 @@ module.exports.saveAboutSkills = function(req, res) {
       console.log("объект создан!");
     });
   });
+  res.send("all good");
 };

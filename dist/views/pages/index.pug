@@ -51,7 +51,7 @@ block wrapper_addon
             
             .flipper__authorization.authorization
                 h1.title.title--underlined.authorization__title Авторизуйтесь
-                form.authorization__form#authorization__form(action="authorization.php")
+                form.authorization__form#authorization__form(action="/user" method='POST')
                     .authorization__tooltip Заполните поле формы
                     .authorization__wrapper-form
                         label.authorization__label
@@ -61,7 +61,7 @@ block wrapper_addon
                         label.authorization__label
                             svg.authorization__input-svg
                                 use(xlink:href=`../../images/sprite.svg`+"#password")
-                            input(type="text" name='userPassword' id='user_password' placeholder='Пароль' class="authorization__input")
+                            input(type="password" name='userPassword' id='user_password' placeholder='Пароль' class="authorization__input")
                         <label class="authorization__label-isHuman">
                             <input type="checkbox" name="userisHuman"  id='user_isHuman'class="authorization__input authorization__input--checkbox" value='yes'>
                             <div class="authorization__checkbox-fake"></div>

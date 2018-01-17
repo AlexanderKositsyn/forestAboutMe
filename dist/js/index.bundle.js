@@ -519,14 +519,14 @@ module.exports = __webpack_require__.p + "images/water.jpg";
 
 /***/ }),
 
-/***/ 60:
+/***/ 66:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__img_water_jpg__ = __webpack_require__(6);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__img_water_jpg___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__img_water_jpg__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__img_water_maps_jpg__ = __webpack_require__(61);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__img_water_maps_jpg__ = __webpack_require__(67);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__img_water_maps_jpg___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1__img_water_maps_jpg__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__icons_sprite_sprite_svg__ = __webpack_require__(8);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__icons_sprite_sprite_svg___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2__icons_sprite_sprite_svg__);
@@ -537,9 +537,9 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__node_modules_svg4everybody_dist_svg4everybody__ = __webpack_require__(10);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__node_modules_svg4everybody_dist_svg4everybody___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_5__node_modules_svg4everybody_dist_svg4everybody__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__js_modules_preloader__ = __webpack_require__(11);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__js_modules_authorization_button__ = __webpack_require__(62);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__js_modules_welcome__ = __webpack_require__(63);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__js_modules_formValidator__ = __webpack_require__(64);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__js_modules_authorization_button__ = __webpack_require__(68);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__js_modules_welcome__ = __webpack_require__(69);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__js_modules_formValidator__ = __webpack_require__(70);
 /*--images---*/
 
 
@@ -568,14 +568,14 @@ document.addEventListener("DOMContentLoaded", function (event) {
 
 /***/ }),
 
-/***/ 61:
+/***/ 67:
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports = __webpack_require__.p + "images/water-maps.jpg";
 
 /***/ }),
 
-/***/ 62:
+/***/ 68:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -593,7 +593,7 @@ function authorizationButtonInit() {
 
 /***/ }),
 
-/***/ 63:
+/***/ 69:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -615,55 +615,47 @@ function authorizationButtonInit() {
 
 /***/ }),
 
-/***/ 64:
+/***/ 70:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony default export */ __webpack_exports__["a"] = (function () {
-  let form = document.querySelector("#authorization__form");
-
-  function validateHandler(e) {
-    e.preventDefault();
-    let dataFormDataObject = new FormData(form),
-        dataFormArray = [...dataFormDataObject.entries()],
-        tooltip = document.querySelector(".authorization__tooltip"); // сначала скоем тултип
-
-    tooltip.classList.remove("authorization__tooltip--active");
-    console.log(dataFormArray[0][1]); // если данные пустые то напишем в тул тип и остановим функцию
-
-    if (dataFormArray[0][1] === "" || dataFormArray[1][1] === "") {
-      tooltip.classList.add("authorization__tooltip--active");
-      tooltip.innerHTML = "Вы забыли заполнить поле логин или пароль";
-      return;
-    } // если все окей, то отправляем эти данные на сревер при помощи ajax
-
-
-    let serialize = function (obj) {
-      var str = [];
-
-      for (var p in obj) if (obj.hasOwnProperty(p)) {
-        str.push(encodeURIComponent(p) + "=" + encodeURIComponent(obj[p]));
-      }
-
-      return str.join("&");
-    };
-
-    var xhr = new XMLHttpRequest();
-    xhr.open("POST", "form.php", true);
-    xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-
-    xhr.onload = function () {
-      if (xhr.status === 200) {
-        alert('User\'s name is ' + xhr.responseText);
-      } else {
-        alert('Request failed.  Returned status of ' + xhr.status);
-      }
-    };
-
-    xhr.send(serialize(dataFormArray));
-  }
-
-  form.addEventListener("submit", validateHandler);
+/* harmony default export */ __webpack_exports__["a"] = (function () {// let form = document.querySelector("#authorization__form");
+  // function validateHandler(e) {
+  //   e.preventDefault();
+  //   let dataFormDataObject = new FormData(form),
+  //     dataFormArray = [...dataFormDataObject.entries()],
+  //     tooltip = document.querySelector(".authorization__tooltip");
+  //   // сначала скоем тултип
+  //   tooltip.classList.remove("authorization__tooltip--active");
+  //   console.log(dataFormArray[0][1]);
+  //   // если данные пустые то напишем в тул тип и остановим функцию
+  //   if (dataFormArray[0][1] === "" || dataFormArray[1][1] === "") {
+  //     tooltip.classList.add("authorization__tooltip--active");
+  //     tooltip.innerHTML = "Вы забыли заполнить поле логин или пароль";
+  //     return;
+  //   }
+  //   // если все окей, то отправляем эти данные на сревер при помощи ajax
+  //   let serialize = function (obj) {
+  //     var str = [];
+  //     for (var p in obj)
+  //       if (obj.hasOwnProperty(p)) {
+  //         str.push(encodeURIComponent(p) + "=" + encodeURIComponent(obj[p]));
+  //       }
+  //     return str.join("&");
+  //   }
+  //   var xhr = new XMLHttpRequest();
+  //   xhr.open("POST", "form.php", true);
+  //   xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+  //   xhr.onload = function () {
+  //     if (xhr.status === 200) {
+  //       alert('User\'s name is ' + xhr.responseText);
+  //     } else {
+  //       alert('Request failed.  Returned status of ' + xhr.status);
+  //     }
+  //   };
+  //   xhr.send(serialize(dataFormArray));
+  // }
+  // form.addEventListener("submit", validateHandler);
 });
 
 /***/ }),
@@ -682,4 +674,4 @@ module.exports = __webpack_require__.p + "images/sprite.svg";
 
 /***/ })
 
-},[60]);
+},[66]);

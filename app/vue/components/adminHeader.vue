@@ -3,7 +3,7 @@
     header.header
         .container
             .header__title Панель администрирования
-            a(href='#').header__logout Вернуться на сайт
+            a(href='/').header__logout Вернуться на сайт
 </template>
 
 <script>

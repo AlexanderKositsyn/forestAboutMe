@@ -1,6 +1,7 @@
 <template lang="pug">
     ul.about-content__list
       about-content-list-item(
+        ref="listItem"
         v-for='(typeSkill, skillKey) in typeSkills'
         :skillKey = 'skillKey'
         :typeSkill = 'typeSkill'

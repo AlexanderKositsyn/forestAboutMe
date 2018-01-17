@@ -4,7 +4,7 @@ const mongoose = require("mongoose"),
 const Skills = new Schema(
   {
     name: String,
-    percents: Number,
+    percents: String,
     type: Number
   },
   {

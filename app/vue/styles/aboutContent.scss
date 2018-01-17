@@ -35,6 +35,9 @@
     border-radius: 10px;
     display: none;
   }
+  &__popup.active {
+    display: block;
+  }
   &__message {
     margin-bottom: 20px;
   }

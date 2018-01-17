@@ -33,8 +33,6 @@ module.exports.uploadImageSlider = (req, res) => {
         fs.unlink(fileName);
         fs.rename(files.image.path, fileName);
       }
-
-      //   res.redirect("/admin?msgfile=Картинка успешно загружена");
     });
     // создаем новую запись в БД
     let newImage = new SliderData({
@@ -48,6 +46,7 @@ module.exports.uploadImageSlider = (req, res) => {
         throw err;
       }
       console.log("объект создан!");
+      res.redirect("/admin.html?msg=Картинка успешно загружена&isActive=true");
     });
   });
 };
