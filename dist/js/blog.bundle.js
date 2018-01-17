@@ -509,30 +509,6 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_RESULT__;(function (roo
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony export (immutable) */ __webpack_exports__["a"] = animate_Text;
-function animate_Text(elem, delay) {
-  elem.parentElement.style.display = "none";
-  setTimeout(() => {
-    //найдем текс внутри элемента
-    let text = elem.innerText; // заменить каждую букву на новую разметку
-
-    elem.parentElement.style.display = "block";
-    elem.innerHTML = text.replace(/./g, '<span class="new">$&</span>'); // найти все элементы в контексте  и поставить на них settimeout
-
-    elem.querySelectorAll("span.new").forEach(function (item, index) {
-      setTimeout(function () {
-        item.classList.add("div_opacity");
-      }, 40 * index);
-    });
-  }, delay);
-}
-
-/***/ }),
-
-/***/ 16:
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
 /* harmony export (immutable) */ __webpack_exports__["a"] = scrollIt;
 // функция скролла
 function scrollIt(destination, duration = 200, easing = "linear", callback) {
@@ -641,19 +617,19 @@ function scrollIt(destination, duration = 200, easing = "linear", callback) {
 
 /***/ }),
 
-/***/ 19:
+/***/ 18:
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports = __webpack_require__.p + "images/avatar_my.jpg";
 
 /***/ }),
 
-/***/ 20:
+/***/ 19:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (immutable) */ __webpack_exports__["a"] = initHamburger;
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__js_modules_animation_textShowAnimation__ = __webpack_require__(15);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__js_modules_animation_textShowAnimation__ = __webpack_require__(20);
 
 function initHamburger() {
   let hamburgerLink = document.querySelector(".hamburger"),
@@ -677,6 +653,30 @@ function initHamburger() {
       document.querySelector("body").classList.toggle("body--overflow-hidden");
     });
   }
+}
+
+/***/ }),
+
+/***/ 20:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (immutable) */ __webpack_exports__["a"] = animate_Text;
+function animate_Text(elem, delay) {
+  elem.parentElement.style.display = "none";
+  setTimeout(() => {
+    //найдем текс внутри элемента
+    let text = elem.innerText; // заменить каждую букву на новую разметку
+
+    elem.parentElement.style.display = "block";
+    elem.innerHTML = text.replace(/./g, '<span class="new">$&</span>'); // найти все элементы в контексте  и поставить на них settimeout
+
+    elem.querySelectorAll("span.new").forEach(function (item, index) {
+      setTimeout(function () {
+        item.classList.add("div_opacity");
+      }, 40 * index);
+    });
+  }, delay);
 }
 
 /***/ }),
@@ -705,7 +705,7 @@ function pageY(elem) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__img_avatar_my_jpg__ = __webpack_require__(19);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__img_avatar_my_jpg__ = __webpack_require__(18);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__img_avatar_my_jpg___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__img_avatar_my_jpg__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__icons_sprite_sprite_svg__ = __webpack_require__(8);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__icons_sprite_sprite_svg___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1__icons_sprite_sprite_svg__);
@@ -714,8 +714,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__node_modules_svg4everybody_dist_svg4everybody__ = __webpack_require__(10);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__node_modules_svg4everybody_dist_svg4everybody___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3__node_modules_svg4everybody_dist_svg4everybody__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__js_modules_preloader__ = __webpack_require__(11);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__js_modules_hamburger__ = __webpack_require__(20);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__js_modules_animation_scrollIt__ = __webpack_require__(16);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__js_modules_hamburger__ = __webpack_require__(19);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__js_modules_animation_scrollIt__ = __webpack_require__(15);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__js_modules_blogMenu__ = __webpack_require__(78);
 /*---images---*/
 
@@ -756,7 +756,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__articleClickScroll__ = __webpack_require__(79);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__scrollMenu__ = __webpack_require__(80);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__swipeMenuClick__ = __webpack_require__(81);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__animation_scrollIt__ = __webpack_require__(16);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__animation_scrollIt__ = __webpack_require__(15);
 
 
 

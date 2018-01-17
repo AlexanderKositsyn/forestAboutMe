@@ -38,7 +38,7 @@ mixin svgTemp(className, svgId)
 import axios from "axios";
 
 // функция анимации появления текта
-import textShowAnimation from "../../js_modules/animation/textShowAnimation";
+import textShowAnimationVue from "../../js_modules/animation/textShowAnimationVue";
 
 // функция для перехода нового слайда в основном слайдере
 function nextSlideTopSlider(nextItem) {
@@ -117,6 +117,18 @@ export default {
         100}%`;
     }
   },
+  watch: {
+    slideName() {
+      let siteName;
+      siteName = this.$el.querySelector(".my-works__site-name");
+      textShowAnimationVue(siteName, 0, this.slideName);
+    },
+    slideTechnogies() {
+      let siteTechnogies;
+      siteTechnogies = this.$el.querySelector(".my-works__site-technogies");
+      textShowAnimationVue(siteTechnogies, 0, this.slideTechnogies);
+    }
+  },
   created() {
     console.log("запрос на /api/works");
     let store = this.$store;
@@ -135,14 +147,9 @@ export default {
         console.log(error);
       });
   },
+  mounted() {},
 
-  updated: function() {
-    // let siteName, siteTechnogies;
-    // siteName = this.$el.querySelector(".my-works__site-name");
-    // siteTechnogies = this.$el.querySelector(".my-works__site-technogies");
-    // textShowAnimation(siteName, 0);
-    // textShowAnimation(siteTechnogies, 0);
-  }
+  updated: function() {}
 };
 </script>
 
