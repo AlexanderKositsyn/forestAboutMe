@@ -6,6 +6,7 @@ const SliderData = new Schema(
     imgSrc: String,
     siteName: String,
     siteTechnogies: String,
+    siteLink: String,
     active: Boolean
   },
   {

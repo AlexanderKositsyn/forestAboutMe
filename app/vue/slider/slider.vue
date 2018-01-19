@@ -14,7 +14,7 @@ mixin svgTemp(className, svgId)
         .my-works__decription-wrapper
             .my-works__site-name {{slideName}}
             .my-works__site-technogies {{slideTechnogies}}
-            a(href='#').my-works__site-link
+            a(:href='slideLink').my-works__site-link
                 svg.my-works__svg-link
                     use(xlink:href="./images/sprite.svg#link")
                 | Посмотреть сайт   
@@ -98,6 +98,11 @@ export default {
           .siteTechnogies;
       }
     },
+    slideLink() {
+      if (this.$store.state.sliderData.length !== 0) {
+        return this.$store.state.sliderData[this.descriptionNumber].siteLink;
+      }
+    },
     descriptionNumber() {
       return this.currentItem;
       //   console.log("descriptionNumber" + this.currentItem);
@@ -110,11 +115,22 @@ export default {
     },
     // выисляемое св во для слайдера некст, генерирует ему новое значение если изменилось значение currentItem
     sliderNext() {
-      return `${-this.currentItem * 100}%`;
+      // выведем следующий item
+      // текущий элемент уже последний, то следующий элемент будет первый элемент, т е на 0%
+      if (this.currentItem === this.$store.state.sliderData.length - 1) {
+        return `0%`;
+      } else {
+        return `${(-this.currentItem - 1) * 100}%`;
+      }
     },
     sliderPrevious() {
-      return `${(this.$store.state.sliderData.length - 1 - this.currentItem) *
-        100}%`;
+      // выведем предыдущий item
+      // если тэкущий элемент первый, то ставим самый последний
+      if (this.currentItem === 0) {
+        return `${(this.$store.state.sliderData.length - 1) * 100}%`;
+      } else {
+        return `${(this.currentItem - 1) * 100}%`;
+      }
     }
   },
   watch: {
