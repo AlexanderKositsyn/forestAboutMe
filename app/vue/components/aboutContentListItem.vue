@@ -25,8 +25,6 @@ export default {
     filteredSkills() {
       // возьмем массив скилов с объектами
       let skills = this.$store.state.skills;
-      console.log("in filteredSkills");
-      console.log(skills);
       // в зависимоти от пришедшего от родителя ключа типа скилов фильтруем все объекты в  массиве skills
       // проверив есть ли они
       if (skills.lenght !== 0) {
@@ -51,10 +49,7 @@ export default {
   components: {
     "about-content-list-item-row": aboutContentListItemRow
   },
-  mounted() {
-    console.log("this");
-    console.log(this);
-  }
+  mounted() {}
 };
 </script>
 

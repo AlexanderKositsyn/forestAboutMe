@@ -49,19 +49,11 @@ export default {
   },
   methods: {
     blogAddArticle() {
-      console.log("проверка...");
       // если прошла валидация то отправяем на сервер
       this.$validate().then(
         function(success) {
           if (success) {
-            console.log("проверка пройдена");
-            console.log(this.blogName);
             // при нажатии на кнопку отправляем на сервер
-            // console.log(
-            //   `blogName: ${this.blogName}; blogDate: ${
-            //     this.blogDate
-            //   }; blogText: ${this.blogText}`
-            // );
             axios
               .post("/api/blog", {
                 title: this.blogName,
@@ -71,14 +63,16 @@ export default {
               .then(
                 function(response) {
                   this.msg = response.data.msg;
-                  console.log(response);
+                  this.isActive = true;
                 }.bind(this)
               )
-              .catch(function(error) {
-                console.log(error);
-              });
+              .catch(
+                function(error) {
+                  this.msg = "Не удалось сохранить Запись";
+                  this.isActive = true;
+                }.bind(this)
+              );
             //открываем вспливашку в сообщением
-            this.isActive = true;
           }
         }.bind(this)
       );

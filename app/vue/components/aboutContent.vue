@@ -30,7 +30,7 @@ export default {
     // сохранить проценты
     savePercent() {
       // нужно найти внутренний компонент и забрать у него все валидаторы
-      console.log(this.$refs.list.$refs.listItem);
+
       // найдем все промисы во всех списках, и во всех строках-скилах
       // и занесем их в массив
       let array = [];
@@ -39,7 +39,7 @@ export default {
           return array.push(form.validate());
         });
       });
-      console.log(array);
+
       // когда все будут проврены то проверим, есть ли обишки, если они есть то отправлять не будем
       // еси их  нет, то отправим на сервер новые данные
       Promise.all(array).then(
@@ -57,12 +57,14 @@ export default {
                 store: store.state.skills
               })
               .then(function(message) {
-                console.log(message);
+                //Это приходит  с сервера.
                 _this.msg = message.data;
                 _this.isActive = true;
               })
               .catch(function(error) {
-                console.log(error);
+                //Это приходит НЕ с сервера.
+                _this.msg = "Не удалось сохранить скилы";
+                _this.isActive = true;
               });
           }
         }.bind(this)

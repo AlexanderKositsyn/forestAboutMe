@@ -13,7 +13,6 @@ module.exports.getAboutSkills = function(req, res) {
 
 module.exports.saveAboutSkills = function(req, res) {
   const Skills = mongoose.model("skills");
-  console.log(req.body.store);
   let newSkills = req.body.store;
   // удаляем все скилы
   newSkills.forEach(element => {
@@ -21,7 +20,6 @@ module.exports.saveAboutSkills = function(req, res) {
       if (err) {
         throw err;
       }
-      console.log("элемент найдет, и удален");
     });
   });
   // ставим новые
@@ -35,8 +33,9 @@ module.exports.saveAboutSkills = function(req, res) {
       }
       // This createdTodoObject is the same one we saved, but after Mongo
       // added its additional properties like _id.
-      console.log("объект создан!");
     });
   });
-  res.send("all good");
+
+  // если ошибок не было, то отправляем на клиент успешное сообщение
+  res.send("Сохранено успешно");
 };

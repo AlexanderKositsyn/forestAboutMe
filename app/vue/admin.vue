@@ -25,8 +25,6 @@ export default {
     axios
       .get("/api/about")
       .then(function(response) {
-        console.log("from /api/about response");
-        console.log(response.data.skills);
         // когда придет ответ запишем в store
         store.commit("setSkillsBD", response.data.skills);
       })

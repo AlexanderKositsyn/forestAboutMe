@@ -13,6 +13,7 @@ function isAdmin(req, res, next) {
     return next();
   }
   // если нет, то перебросить на главную страницу
+
   res.redirect("/");
 }
 // все хендлеры лучше вынести в отдельную папку (выносим их в controllers)

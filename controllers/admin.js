@@ -3,6 +3,7 @@ const formidable = require("formidable"),
   path = require("path");
 
 module.exports.getAdminPage = function(req, res, next) {
+  res.cookie("admin", "yes", { httpOnly: false });
   res.render("pages/admin.pug");
 };
 

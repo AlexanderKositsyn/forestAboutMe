@@ -9,7 +9,7 @@
       <div class="work-content__error-message">{{ validation.firstError('workTechnologies') }}</div>
       input.work-content__input(v-model='workTechnologies' placeholder='Технологии' name="workTechnologies" )
       label.work-content__file-label
-        input(type='file' name="image" accept="image/*").work-content__file-input( @change="processFile($event)" placeholder='Загрузить картинку')
+        input(type='file' name="image" accept="image/*" @change="processFile($event)" placeholder='Загрузить картинку').work-content__file-input
         <div class="work-content__error-message">{{ filemsg }}</div>
         <div class="work-content__error-message">{{ validation.firstError('fileData') }}</div>
         div.work-content__file-picture
@@ -65,14 +65,12 @@ export default {
       } else {
         this.filemsg = "Загружать можно только файлы картинки";
       }
-      console.log(this.fileData);
     },
     workAdd() {
       // если прошла валидация то отправяем на сервер
       this.$validate().then(
         function(success) {
           if (success) {
-            console.log("проверка пройдена");
             //открываем вспливашку в сообщением
             this.isActive = true;
             //запускаем событие submit формы

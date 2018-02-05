@@ -12,8 +12,6 @@ module.exports.getBlogArticles = function(req, res) {
 module.exports.addBlogArticle = function(req, res) {
   const Blog = mongoose.model("blog");
 
-  console.log("то что пришло от формы req.body");
-  console.log(req.body);
   // создаем новую запись вида Blog
   let item = new Blog({
     title: req.body.title,
@@ -28,7 +26,7 @@ module.exports.addBlogArticle = function(req, res) {
     })
     .catch(err => {
       res.status(400).json({
-        msg: "Произошла ошибка"
+        msg: "Произошла ошибка при добавлении Записи в БД"
       });
     });
 };

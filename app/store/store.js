@@ -18,16 +18,10 @@ export default new Vuex.Store({
   getters: {},
   mutations: {
     setSkillsBD(state, response) {
-      console.log(response);
       state.skills = response;
-      console.log("new state");
-      console.log(state.skills);
     },
     setSliderData(state, response) {
-      console.log(response);
       state.sliderData = response;
-      console.log("new state");
-      console.log(state.sliderData);
     }
   }
 });
